@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nook Design｜制作実績</title>
 <meta name="description" content="Nook Design の飲食店向けデザイン制作実績です。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nook Design">
+<meta property="og:title" content="Nook Design｜制作実績">
+<meta property="og:description" content="Nook Design の飲食店向けデザイン制作実績です。">
+<meta property="og:url" content="https://nookdesign.github.io/nook-design-portfolio/">
+<meta property="og:image" content="https://nookdesign.github.io/nook-design-portfolio/nook-coffee/assets/images/hero.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
@@ -12,34 +21,65 @@
 :root { --bg: #f2ebdd; --ink: #1a1714; --dim: #5c544b; --line: rgba(26, 23, 20, .16); --accent: #7a1e24; }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif; line-height: 1.9; letter-spacing: .06em; }
-main { max-width: 880px; margin: 0 auto; padding: 72px 20px 96px; }
+main { max-width: 880px; margin: 0 auto; padding: 40px 20px 96px; }
+.back { display: inline-block; margin-bottom: 40px; font-size: 13px; color: var(--dim); text-decoration: none; letter-spacing: .1em; }
+.back:hover, .back:focus-visible { color: var(--accent); }
 .label { font-size: 13px; letter-spacing: .3em; color: var(--accent); margin: 0; }
-h1 { font-size: clamp(28px, 6vw, 40px); font-weight: 600; letter-spacing: .14em; margin: 8px 0 12px; }
+h1 { font-size: clamp(28px, 6vw, 40px); font-weight: 600; letter-spacing: .14em; line-height: 1.5; margin: 8px 0 12px; }
+h1 span, .nowrap { display: inline-block; }
 .lead { color: var(--dim); margin: 0 0 48px; }
-.work { display: grid; gap: 20px; text-decoration: none; color: inherit; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 28px 0; }
-.work img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.works { margin: 0; padding: 0; list-style: none; }
+.work { display: grid; gap: 20px; text-decoration: none; color: inherit; border-top: 1px solid var(--line); padding: 28px 0; }
+.works li:last-child .work { border-bottom: 1px solid var(--line); }
+.work img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
 .work h2 { font-size: 22px; font-weight: 600; letter-spacing: .14em; margin: 0; }
+.work .type { margin: 0 0 6px; font-size: 12px; letter-spacing: .2em; color: var(--accent); }
 .work p { margin: 8px 0 0; color: var(--dim); font-size: 14px; }
 .work .more { color: var(--accent); font-size: 14px; letter-spacing: .14em; margin-top: 16px; }
 .work:hover h2, .work:focus-visible h2 { color: var(--accent); }
 .note { margin-top: 40px; font-size: 12px; color: var(--dim); }
+.contact { margin-top: 64px; padding: 32px 24px; border: 1px solid var(--line); text-align: center; }
+.contact p { margin: 0 0 16px; color: var(--dim); font-size: 14px; }
+.contact a { display: inline-block; padding: 12px 28px; background: var(--ink); color: var(--bg); text-decoration: none; letter-spacing: .14em; font-size: 14px; }
+.contact a:hover, .contact a:focus-visible { background: var(--accent); }
 @media (min-width: 720px) { .work { grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; } }
 </style>
 </head>
 <body>
 <main>
+  <a class="back" href="https://nookdesign.github.io/">← Nook Design トップへ</a>
   <p class="label">WORKS</p>
-  <h1>Nook Design 制作実績</h1>
+  <h1><span>Nook Design</span> <span>制作実績</span></h1>
   <p class="lead">飲食店向けのメニュー表・チラシ・Instagram投稿・Webサイトを制作しています。</p>
-  <a class="work" href="izakaya-hinoma/">
-    <img src="izakaya-hinoma/images/sanma.jpg" alt="秋刀魚の塩焼きの写真">
-    <div>
-      <h2>酒肴 灯ノ間</h2>
-      <p>架空の和食居酒屋の1ページWebサイト<br>コンセプト設計・文章・Webデザイン・コーディング</p>
-      <p class="more">サイトを見る →</p>
-    </div>
-  </a>
-  <p class="note">※ 掲載している店舗はすべて架空です。料理写真は AI で作成したイメージ画像です。</p>
+  <ul class="works">
+    <li>
+      <a class="work" href="nook-coffee/">
+        <img src="nook-coffee/assets/images/hero.jpg" alt="NOOK COFFEE のトップ画面に使っている、真鍮のペンダントライトが灯る木のカウンターのあるカフェの店内" width="1536" height="1024">
+        <div>
+          <p class="type">WEBSITE｜5ページ</p>
+          <h2>NOOK COFFEE</h2>
+          <p>架空の自家焙煎カフェの公式サイト（トップ・メニュー・コンセプト・お知らせ・アクセス）<br>コンセプト設計・文章・<span class="nowrap">Webデザイン・コーディング</span></p>
+          <p class="more">サイトを見る →</p>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a class="work" href="izakaya-hinoma/">
+        <img src="izakaya-hinoma/images/sanma.jpg" alt="酒肴 灯ノ間 のサイトで紹介している、秋刀魚の塩焼きの写真" loading="lazy">
+        <div>
+          <p class="type">WEBSITE｜1ページ</p>
+          <h2>酒肴 灯ノ間</h2>
+          <p>架空の和食居酒屋の1ページWebサイト<br>コンセプト設計・文章・<span class="nowrap">Webデザイン・コーディング</span></p>
+          <p class="more">サイトを見る →</p>
+        </div>
+      </a>
+    </li>
+  </ul>
+  <p class="note">※ 掲載している店舗はすべて架空です。店舗情報・価格・お知らせは架空の設定で、写真は AI で作成したイメージ画像です。</p>
+  <div class="contact">
+    <p>ホームページ制作のご相談は、Nook Design のサイトからお気軽にどうぞ。</p>
+    <a href="https://nookdesign.github.io/#contact">お問い合わせ</a>
+  </div>
 </main>
 </body>
 </html>

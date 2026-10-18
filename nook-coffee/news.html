@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News お知らせ｜NOOK COFFEE（架空のカフェ）</title>
+  <meta name="description" content="NOOK COFFEE（架空のカフェ）からのお知らせ。新メニュー、営業日、イベントの情報です。掲載内容はすべて架空です。">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0e0c0a">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NOOK COFFEE（Nook Design 制作実績）">
+  <meta property="og:title" content="News お知らせ｜NOOK COFFEE（架空のカフェ）">
+  <meta property="og:description" content="NOOK COFFEE（架空のカフェ）からのお知らせ。新メニュー、営業日、イベントの情報です。掲載内容はすべて架空です。">
+  <meta property="og:url" content="https://nookdesign.github.io/nook-design-portfolio/nook-coffee/news.html">
+  <meta property="og:image" content="https://nookdesign.github.io/nook-design-portfolio/nook-coffee/assets/images/hero.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Shippori+Mincho:wght@400;500&amp;family=Zen+Kaku+Gothic+New:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body data-page="news">
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <div data-include="header" id="top"></div>
+  <noscript>
+    <nav class="noscript-nav" aria-label="メインメニュー">
+      <a href="index.html">Home</a><a href="menu.html">Menu</a><a href="about.html">About</a><a href="news.html">News</a><a href="access.html">Access</a>
+      <p>※ 架空のカフェのデザインサンプルです。</p>
+    </nav>
+  </noscript>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="page-hero__media media">
+        <img src="assets/images/counter.jpg" alt="バリスタがエスプレッソマシンでグラスにエスプレッソを抽出している手元" width="1122" height="1402" fetchpriority="high">
+      </div>
+      <div class="container page-hero__content">
+        <p class="eyebrow">Journal</p>
+        <h1 class="page-hero__title" id="page-title">News</h1>
+        <p class="page-hero__jp">お知らせ</p>
+        <nav class="breadcrumb" aria-label="現在の位置">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">News</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="news-title">
+      <div class="container">
+        <div class="section-head section-head--split reveal">
+          <div>
+            <p class="eyebrow">All Posts</p>
+            <h2 class="section-title" id="news-title">From the <em>Nook</em></h2>
+          </div>
+          <p class="fiction-note">※ お知らせはすべて架空の内容です</p>
+        </div>
+
+        <!-- 絞り込みボタン（JavaScript が使えるときだけ表示） -->
+        <div class="filter" data-news-filter role="group" aria-label="カテゴリで絞り込む" hidden>
+          <button class="filter__btn" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter__btn" type="button" data-filter="menu" aria-pressed="false">Menu</button>
+          <button class="filter__btn" type="button" data-filter="info" aria-pressed="false">Info</button>
+          <button class="filter__btn" type="button" data-filter="event" aria-pressed="false">Event</button>
+        </div>
+        <p class="filter__status" data-filter-status aria-live="polite"></p>
+
+        <ul class="news-list">
+          <li class="news-item" data-category="menu">
+            <article class="news-item__inner" id="news-20261010">
+              <time class="news-item__date" datetime="2026-10-10">2026.10.10</time>
+              <span class="tag">Menu</span>
+              <h3 class="news-item__title">秋の限定メニュー「焼き栗とほうじ茶のラテ」がはじまります</h3>
+              <p class="news-item__body">香ばしいほうじ茶に、自家製の焼き栗ペーストを合わせた秋季限定のラテです。11月末までの販売を予定しています（なくなり次第終了）。</p>
+            </article>
+          </li>
+          <li class="news-item" data-category="info">
+            <article class="news-item__inner" id="news-20261001">
+              <time class="news-item__date" datetime="2026-10-01">2026.10.01</time>
+              <span class="tag">Info</span>
+              <h3 class="news-item__title">10月の営業日と定休日のお知らせ</h3>
+              <p class="news-item__body">10月は毎週水曜日の定休日に加え、焙煎機のメンテナンスのため 10月23日（金）を臨時休業とさせていただきます。</p>
+            </article>
+          </li>
+          <li class="news-item" data-category="event">
+            <article class="news-item__inner" id="news-20260920">
+              <time class="news-item__date" datetime="2026-09-20">2026.09.20</time>
+              <span class="tag">Event</span>
+              <h3 class="news-item__title">ハンドドリップ教室（全4回）の参加者を募集します</h3>
+              <p class="news-item__body">豆の選び方から、お湯の温度、注ぎ方まで。ご自宅でもおいしいコーヒーを淹れられるようになる少人数制の教室です。各回6名まで。</p>
+            </article>
+          </li>
+          <li class="news-item" data-category="menu">
+            <article class="news-item__inner" id="news-20260905">
+              <time class="news-item__date" datetime="2026-09-05">2026.09.05</time>
+              <span class="tag">Menu</span>
+              <h3 class="news-item__title">新しいシングルオリジン「エチオピア ゲイシャ」が入荷しました</h3>
+              <p class="news-item__body">ジャスミンのような華やかな香りと、紅茶のような口あたり。数量限定のため、ハンドドリップと豆の販売でご用意しています。</p>
+            </article>
+          </li>
+          <li class="news-item" data-category="info">
+            <article class="news-item__inner" id="news-20260820">
+              <time class="news-item__date" datetime="2026-08-20">2026.08.20</time>
+              <span class="tag">Info</span>
+              <h3 class="news-item__title">キャッシュレス決済の対応を拡大しました</h3>
+              <p class="news-item__body">各種クレジットカード・交通系ICカードに加え、QRコード決済にも対応しました。</p>
+            </article>
+          </li>
+          <li class="news-item" data-category="event">
+            <article class="news-item__inner" id="news-20260801">
+              <time class="news-item__date" datetime="2026-08-01">2026.08.01</time>
+              <span class="tag">Event</span>
+              <h3 class="news-item__title">夏の夜のカッピング会を開催しました</h3>
+              <p class="news-item__body">ご参加いただいた皆さま、ありがとうございました。次回は冬の開催を予定しています。日程は決まり次第こちらでお知らせします。</p>
+            </article>
+          </li>
+          <li class="news-item" data-category="info">
+            <article class="news-item__inner" id="news-20260710">
+              <time class="news-item__date" datetime="2026-07-10">2026.07.10</time>
+              <span class="tag">Info</span>
+              <h3 class="news-item__title">NOOK COFFEE の公式サイトを公開しました</h3>
+              <p class="news-item__body">メニューや営業日のお知らせは、今後このページでお伝えしていきます。どうぞよろしくお願いいたします。</p>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--dark cta" aria-labelledby="cta-title">
+      <div class="container reveal">
+        <p class="eyebrow">Visit Us</p>
+        <h2 class="section-title" id="cta-title">See You at the <em>Nook</em></h2>
+        <p class="section-title-jp">営業時間・アクセスはこちら</p>
+        <div class="btn-row">
+          <a class="btn btn--light" href="access.html">Access</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+  <noscript>
+    <p class="noscript-nav">※ このサイトは Nook Design のポートフォリオ用に制作した架空のカフェのWebサイトです。店舗名・住所・営業時間・価格・お知らせはすべて架空の設定で、写真はAIで生成したイメージ画像です。</p>
+  </noscript>
+</body>
+</html>
