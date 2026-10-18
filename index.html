@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nook Design｜制作実績</title>
+<meta name="description" content="Nook Design の飲食店向けデザイン制作実績です。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #f2ebdd; --ink: #1a1714; --dim: #5c544b; --line: rgba(26, 23, 20, .16); --accent: #7a1e24; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif; line-height: 1.9; letter-spacing: .06em; }
+main { max-width: 880px; margin: 0 auto; padding: 72px 20px 96px; }
+.label { font-size: 13px; letter-spacing: .3em; color: var(--accent); margin: 0; }
+h1 { font-size: clamp(28px, 6vw, 40px); font-weight: 600; letter-spacing: .14em; margin: 8px 0 12px; }
+.lead { color: var(--dim); margin: 0 0 48px; }
+.work { display: grid; gap: 20px; text-decoration: none; color: inherit; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 28px 0; }
+.work img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.work h2 { font-size: 22px; font-weight: 600; letter-spacing: .14em; margin: 0; }
+.work p { margin: 8px 0 0; color: var(--dim); font-size: 14px; }
+.work .more { color: var(--accent); font-size: 14px; letter-spacing: .14em; margin-top: 16px; }
+.work:hover h2, .work:focus-visible h2 { color: var(--accent); }
+.note { margin-top: 40px; font-size: 12px; color: var(--dim); }
+@media (min-width: 720px) { .work { grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; } }
+</style>
+</head>
+<body>
+<main>
+  <p class="label">WORKS</p>
+  <h1>Nook Design 制作実績</h1>
+  <p class="lead">飲食店向けのメニュー表・チラシ・Instagram投稿・Webサイトを制作しています。</p>
+  <a class="work" href="izakaya-hinoma/">
+    <img src="izakaya-hinoma/images/sanma.jpg" alt="秋刀魚の塩焼きの写真">
+    <div>
+      <h2>酒肴 灯ノ間</h2>
+      <p>架空の和食居酒屋の1ページWebサイト<br>コンセプト設計・文章・Webデザイン・コーディング</p>
+      <p class="more">サイトを見る →</p>
+    </div>
+  </a>
+  <p class="note">※ 掲載している店舗はすべて架空です。料理写真は AI で作成したイメージ画像です。</p>
+</main>
+</body>
+</html>

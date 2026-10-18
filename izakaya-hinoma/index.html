@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>酒肴 灯ノ間｜旬の魚と季節の肴（デザインサンプル）</title>
+<meta name="description" content="Nook Design が制作した、架空の和食居酒屋「酒肴 灯ノ間」の1ページWebサイトのデザインサンプルです。">
+<!-- 架空の店舗なので、検索エンジンに載らないようにしています -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#14110f">
+<!-- SNSで共有したときに表示される情報（OGP） -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="酒肴 灯ノ間｜Nook Design 制作実績（デザインサンプル）">
+<meta property="og:description" content="Nook Design が制作した、架空の和食居酒屋の1ページWebサイトです。">
+<meta property="og:url" content="https://nookdesign.github.io/nook-design-portfolio/izakaya-hinoma/">
+<meta property="og:image" content="https://nookdesign.github.io/nook-design-portfolio/izakaya-hinoma/images/sanma.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 fill=%22%2314110f%22/%3E%3Ccircle cx=%2232%22 cy=%2232%22 r=%2224%22 fill=%22none%22 stroke=%22%237a1e24%22 stroke-width=%223%22/%3E%3Ccircle cx=%2232%22 cy=%2232%22 r=%227%22 fill=%22%23f2ebdd%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Shippori+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== 色・文字の基本設定（ここを変えるとサイト全体の色が変わります） ===== */
+:root {
+  --sumi: #14110f;        /* 墨：暗い背景 */
+  --sumi-2: #1d1916;      /* 墨（少し明るい）：カード */
+  --sumi-line: rgba(242, 235, 221, .14);
+  --kinari: #f2ebdd;      /* 生成り：明るい背景・暗い背景の上の文字 */
+  --kinari-2: #e8dfcd;    /* 生成り（少し濃い）：明るい背景のカード */
+  --kinari-dim: rgba(242, 235, 221, .72);
+  --ink: #1a1714;         /* 明るい背景の上の文字 */
+  --ink-dim: #5c544b;
+  --ink-line: rgba(26, 23, 20, .16);
+  --shinku: #7a1e24;      /* 深紅：差し色（線・ボタン・印） */
+  --shinku-deep: #5e161b;
+
+  --font-jp: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+  --font-en: "Cormorant Garamond", "Times New Roman", serif;
+
+  --gutter: 20px;
+  --max: 1080px;
+  --header-h: 64px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--sumi);
+  color: var(--kinari);
+  font-family: var(--font-jp);
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: .06em;
+  font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3, p, dl, dd, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+button { font: inherit; color: inherit; }
+
+.container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ===== デモ表示の帯 ===== */
+.demo-bar {
+  background: #0b0908;
+  color: var(--kinari-dim);
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+  padding: 8px var(--gutter);
+  letter-spacing: .08em;
+}
+
+/* ===== ヘッダー ===== */
+.header {
+  position: sticky; top: 0; z-index: 50;
+  height: var(--header-h);
+  display: flex; align-items: center;
+  transition: background-color .4s, border-color .4s;
+  border-bottom: 1px solid transparent;
+}
+.header.is-scrolled { background: rgba(20, 17, 15, .92); border-color: var(--sumi-line); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.header__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.logo { text-decoration: none; display: flex; align-items: baseline; gap: 10px; white-space: nowrap; }
+.logo__sub { font-size: 12px; color: var(--kinari-dim); letter-spacing: .2em; }
+.logo__main { font-size: 20px; font-weight: 600; letter-spacing: .24em; }
+.nav { display: none; }
+.nav ul { display: flex; gap: 28px; }
+.nav a { text-decoration: none; font-size: 14px; letter-spacing: .16em; color: var(--kinari-dim); transition: color .3s; }
+.nav a:hover { color: var(--kinari); }
+
+.menu-btn {
+  width: 44px; height: 44px; border: 0; background: none; padding: 0; cursor: pointer;
+  display: grid; place-content: center; gap: 7px;
+}
+.menu-btn span { display: block; width: 24px; height: 1px; background: var(--kinari); transition: transform .3s; }
+.menu-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(4px) rotate(45deg); }
+.menu-btn[aria-expanded="true"] span:nth-child(2) { transform: translateY(-4px) rotate(-45deg); }
+
+.drawer {
+  position: fixed; inset: 0; z-index: 40;
+  background: var(--sumi);
+  display: flex; flex-direction: column; align-items: center; gap: 40px;
+  padding: calc(var(--header-h) + 24px) var(--gutter) 40px;
+  overflow-y: auto; overscroll-behavior: contain;
+  opacity: 0; visibility: hidden; transition: opacity .35s, visibility .35s;
+}
+/* 高さに余裕があるときは中央、ないときは上から並べる */
+.drawer > :first-child { margin-top: auto; }
+.drawer > :last-child { margin-bottom: auto; }
+.drawer.is-open { opacity: 1; visibility: visible; }
+.drawer ul { text-align: center; display: grid; gap: 28px; }
+.drawer a { text-decoration: none; font-size: 20px; letter-spacing: .24em; }
+.drawer .en { display: block; font-family: var(--font-en); font-style: italic; font-size: 13px; color: var(--kinari-dim); letter-spacing: .2em; }
+
+/* ===== ボタン ===== */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  min-height: 52px; padding: 0 32px;
+  border: 1px solid var(--shinku); background: var(--shinku); color: var(--kinari);
+  text-decoration: none; letter-spacing: .2em; font-size: 15px; cursor: pointer;
+  transition: background-color .3s, border-color .3s;
+}
+.btn:hover { background: var(--shinku-deep); border-color: var(--shinku-deep); }
+.btn--ghost { background: transparent; border-color: var(--kinari-dim); }
+.btn--ghost:hover { background: rgba(242, 235, 221, .08); border-color: var(--kinari); }
+.btn--light { background: var(--kinari); border-color: var(--kinari); color: var(--ink); }
+.btn--light:hover { background: #fff8ea; border-color: #fff8ea; }
+.btn__tag { font-size: 11px; letter-spacing: .1em; opacity: .75; }
+.header .btn { display: none; min-height: 40px; padding: 0 20px; font-size: 13px; }
+
+/* ===== ヒーロー（最初の画面） ===== */
+.hero {
+  position: relative; overflow: hidden;
+  min-height: calc(100vh - var(--header-h) - 34px);
+  min-height: calc(100svh - var(--header-h) - 34px);
+  display: flex; align-items: stretch;
+  margin-top: calc(var(--header-h) * -1);
+  padding-top: var(--header-h);
+  background:
+    radial-gradient(ellipse 60% 45% at 72% 38%, rgba(160, 60, 40, .22), transparent 70%),
+    radial-gradient(ellipse 50% 60% at 20% 90%, rgba(122, 30, 36, .18), transparent 70%),
+    var(--sumi);
+}
+.hero::after { /* 灯りのゆらぎ */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(circle at 72% 38%, rgba(255, 190, 120, .07), transparent 35%);
+  animation: flicker 6s ease-in-out infinite alternate;
+}
+@keyframes flicker { from { opacity: .6; } to { opacity: 1; } }
+.hero__inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr auto; gap: 24px; padding-top: 48px; padding-bottom: 56px; }
+.hero__copy {
+  writing-mode: vertical-rl; text-orientation: upright;
+  font-size: clamp(28px, min(10.5vw, 8.5vh), 68px); font-weight: 600; line-height: 1.6; letter-spacing: .18em;
+  justify-self: end; align-self: start;
+  grid-column: 2; grid-row: 1;
+}
+.hero__copy span { display: block; }
+.hero__copy span:last-child { margin-top: 2.2em; }
+.hero__side { display: flex; flex-direction: column; justify-content: flex-end; gap: 28px; grid-column: 1; grid-row: 1; }
+.hero__mark { width: 84px; height: 84px; }
+.hero__name { font-size: 14px; letter-spacing: .24em; color: var(--kinari-dim); }
+.hero__name strong { display: block; font-size: 30px; font-weight: 600; color: var(--kinari); letter-spacing: .3em; margin-top: 4px; }
+.hero__lead { font-size: 14px; color: var(--kinari-dim); line-height: 2; }
+.hero__scroll { font-family: var(--font-en); font-style: italic; font-size: 12px; letter-spacing: .3em; color: var(--kinari-dim); display: flex; align-items: center; gap: 12px; }
+.hero__scroll::after { content: ""; width: 48px; height: 1px; background: var(--kinari-dim); }
+
+/* ===== セクション共通 ===== */
+.section { padding: 96px 0; }
+.section--light { background: var(--kinari); color: var(--ink); }
+.section-head { margin-bottom: 48px; }
+.section-head .en { font-family: var(--font-en); font-style: italic; font-size: 14px; letter-spacing: .3em; color: var(--shinku); display: flex; align-items: center; gap: 14px; }
+.section:not(.section--light) .section-head .en { color: #c9a27a; }
+.section-head .en::before { content: ""; width: 32px; height: 1px; background: currentColor; }
+.section-head h2 { font-size: clamp(26px, 6.4vw, 38px); font-weight: 600; letter-spacing: .16em; line-height: 1.6; margin-top: 12px; }
+.section-head p { margin-top: 20px; color: var(--kinari-dim); }
+.section--light .section-head p { color: var(--ink-dim); }
+.note { font-size: 12px; line-height: 1.8; color: var(--kinari-dim); }
+.section--light .note { color: var(--ink-dim); }
+.fiction { display: inline-block; font-size: 11px; letter-spacing: .1em; padding: 2px 10px; border: 1px solid currentColor; opacity: .75; line-height: 1.7; vertical-align: middle; }
+
+/* ===== コンセプト ===== */
+.concept__body { display: grid; gap: 48px; }
+.concept__text p + p { margin-top: 1.4em; }
+.concept__text { font-size: 16px; line-height: 2.2; }
+.points { display: grid; gap: 1px; background: var(--ink-line); border-block: 1px solid var(--ink-line); }
+.point { background: var(--kinari); padding: 28px 0; display: grid; grid-template-columns: 56px 1fr; gap: 16px; align-items: start; }
+.point__num { font-size: 28px; color: var(--shinku); line-height: 1.2; font-weight: 600; }
+.point h3 { font-size: 18px; font-weight: 600; letter-spacing: .14em; line-height: 1.6; }
+.point p { font-size: 14px; color: var(--ink-dim); margin-top: 6px; line-height: 1.9; }
+
+/* ===== おすすめ料理 ===== */
+.dishes { display: grid; gap: 56px; }
+.dish__photo {
+  position: relative; aspect-ratio: 4 / 3; overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(160, 60, 40, .25), transparent 65%),
+    linear-gradient(160deg, #241e1a, #110e0c);
+  border: 1px solid var(--sumi-line);
+  display: grid; place-items: center;
+}
+.dish__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.dish__kanji { font-size: clamp(40px, 13vw, 64px); font-weight: 700; letter-spacing: .12em; color: rgba(242, 235, 221, .16); }
+.dish__label { position: absolute; left: 14px; bottom: 10px; font-family: var(--font-en); font-style: italic; font-size: 12px; letter-spacing: .2em; color: var(--kinari-dim); }
+.dish__num { position: absolute; z-index: 1; top: 0; right: 16px; background: var(--shinku); color: var(--kinari); font-size: 13px; letter-spacing: .2em; writing-mode: vertical-rl; padding: 14px 8px; }
+.dish__body { padding-top: 24px; }
+.dish h3 { font-size: 24px; font-weight: 600; letter-spacing: .14em; line-height: 1.5; }
+.dish h3::after { content: ""; display: block; width: 32px; height: 1px; background: var(--shinku); margin-top: 16px; }
+.dish p { margin-top: 16px; font-size: 15px; color: var(--kinari-dim); line-height: 2; }
+.dish__price { margin-top: 16px; font-size: 18px; letter-spacing: .08em; }
+.dish__price small { font-size: 12px; color: var(--kinari-dim); margin-left: 4px; }
+
+/* ===== コース ===== */
+.courses { display: grid; gap: 24px; }
+.course { position: relative; background: var(--kinari-2); padding: 36px 24px 32px; border-top: 2px solid var(--ink); }
+.course--featured { border-top-color: var(--shinku); background: #fff9ee; box-shadow: 0 20px 40px -24px rgba(26, 23, 20, .35); }
+.course__badge { position: absolute; top: -2px; right: 20px; background: var(--shinku); color: var(--kinari); font-size: 12px; letter-spacing: .2em; padding: 4px 12px; }
+.course__en { font-family: var(--font-en); font-style: italic; font-size: 13px; letter-spacing: .24em; color: var(--ink-dim); }
+.course h3 { font-size: 24px; font-weight: 600; letter-spacing: .2em; margin-top: 4px; line-height: 1.5; }
+.course h3 small { font-size: 14px; font-weight: 400; color: var(--ink-dim); margin-left: 8px; letter-spacing: .1em; }
+.course__price { font-size: 26px; margin-top: 16px; letter-spacing: .06em; }
+.course__price small { font-size: 12px; color: var(--ink-dim); margin-left: 4px; }
+.course__desc { font-size: 14px; color: var(--ink-dim); margin-top: 12px; line-height: 1.9; }
+.course__menu { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--ink-line); font-size: 14px; line-height: 2.1; }
+.course__menu li { display: flex; gap: 12px; }
+.course__menu li span:first-child { flex: 0 0 4.5em; color: var(--shinku); letter-spacing: .12em; }
+.course-notes { margin-top: 32px; }
+
+/* ===== 店舗情報 ===== */
+.info { display: grid; gap: 48px; }
+.info__list { border-top: 1px solid var(--sumi-line); }
+.info__row { display: grid; grid-template-columns: 6.5em 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--sumi-line); font-size: 15px; line-height: 1.9; }
+.info__row dt { color: #c9a27a; letter-spacing: .16em; font-size: 14px; }
+.info__row dd small { display: block; font-size: 12px; color: var(--kinari-dim); }
+.info__visual {
+  position: relative; aspect-ratio: 4 / 3; border: 1px solid var(--sumi-line);
+  background: linear-gradient(160deg, #221c18, #110e0c);
+  display: grid; place-items: center; text-align: center; padding: 24px;
+}
+.info__visual p { font-size: 13px; color: var(--kinari-dim); line-height: 1.9; }
+.info__visual svg { width: 72px; height: 72px; margin: 0 auto 16px; }
+
+/* ===== 予約 ===== */
+.reserve { background: var(--shinku); color: var(--kinari); text-align: center; padding: 88px 0; position: relative; overflow: hidden; }
+.reserve::before { content: ""; position: absolute; inset: 16px; border: 1px solid rgba(242, 235, 221, .3); pointer-events: none; }
+.reserve .en { font-family: var(--font-en); font-style: italic; letter-spacing: .3em; font-size: 14px; opacity: .8; }
+.reserve h2 { font-size: clamp(26px, 6.4vw, 36px); font-weight: 600; letter-spacing: .2em; margin-top: 8px; line-height: 1.6; }
+.reserve p { margin-top: 20px; font-size: 15px; line-height: 2; }
+.reserve .btn { margin-top: 36px; }
+.reserve .note { color: rgba(242, 235, 221, .8); margin-top: 20px; }
+
+/* ===== Nook Design 制作実績 ===== */
+.works { background: #0e0c0b; }
+.works__grid { display: grid; gap: 40px; }
+.works__table { border-top: 1px solid var(--sumi-line); }
+.works__table div { display: grid; grid-template-columns: 6.5em 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--sumi-line); font-size: 14px; line-height: 1.9; }
+.works__table dt { color: var(--kinari-dim); letter-spacing: .12em; }
+.works__points li { position: relative; padding-left: 28px; font-size: 14px; line-height: 1.9; }
+.works__points li + li { margin-top: 14px; }
+.works__points li::before { content: ""; position: absolute; left: 0; top: .8em; width: 14px; height: 1px; background: var(--shinku); box-shadow: 0 0 0 .5px var(--shinku); }
+.works__points strong { display: block; font-weight: 600; font-size: 15px; letter-spacing: .1em; }
+.works__points span { color: var(--kinari-dim); }
+.works h3 { font-size: 16px; font-weight: 600; letter-spacing: .16em; margin-bottom: 20px; }
+
+/* ===== フッター ===== */
+.footer { padding: 48px 0 calc(48px + 76px); text-align: center; border-top: 1px solid var(--sumi-line); }
+.footer .logo { justify-content: center; }
+.footer p { font-size: 12px; color: var(--kinari-dim); margin-top: 16px; line-height: 1.9; }
+.footer__copy { font-family: var(--font-en); letter-spacing: .16em; }
+
+/* ===== スマホ用の固定予約ボタン ===== */
+.sticky-cta {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+  padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom));
+  background: rgba(20, 17, 15, .94); border-top: 1px solid var(--sumi-line);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  transform: translateY(110%); transition: transform .4s;
+}
+.sticky-cta.is-visible { transform: none; }
+.sticky-cta .btn { width: 100%; }
+
+/* ===== 予約（デモ）のお知らせ画面 ===== */
+.dialog {
+  width: min(440px, calc(100% - 2 * var(--gutter)));
+  border: 1px solid var(--sumi-line); padding: 40px 28px 28px;
+  background: var(--sumi-2); color: var(--kinari); text-align: center;
+}
+.dialog::backdrop { background: rgba(0, 0, 0, .7); }
+.dialog h2 { font-size: 20px; font-weight: 600; letter-spacing: .16em; }
+.dialog p { margin-top: 16px; font-size: 14px; color: var(--kinari-dim); line-height: 2; }
+.dialog .btn { margin-top: 28px; width: 100%; }
+
+/* ===== ふわっと表示 ===== */
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1s ease, transform 1s ease; }
+.js .reveal.is-shown { opacity: 1; transform: none; }
+
+/* ===== タブレット・PC ===== */
+@media (min-width: 768px) {
+  :root { --gutter: 40px; --header-h: 76px; }
+  .section { padding: 136px 0; }
+  .nav, .header .btn { display: block; }
+  .header .btn { display: inline-flex; }
+  .menu-btn, .drawer, .sticky-cta { display: none; }
+  .footer { padding-bottom: 56px; }
+  .hero__inner { gap: 64px; padding-top: 64px; padding-bottom: 72px; }
+  .hero__copy { margin-right: 4%; }
+  .hero__mark { width: 104px; height: 104px; }
+  .hero__lead { font-size: 15px; }
+  .concept__body { grid-template-columns: 1.1fr 1fr; gap: 72px; align-items: start; }
+  .dishes { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .dish:nth-child(2) { margin-top: 64px; }
+  .dish h3 { font-size: 22px; }
+  .courses { grid-template-columns: repeat(3, 1fr); align-items: start; }
+  .info { grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: start; }
+  .works__grid { grid-template-columns: 1fr 1fr; gap: 64px; }
+  .reserve { padding: 120px 0; }
+  .reserve::before { inset: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero::after { animation: none; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+}
+</style>
+</head>
+<body>
+
+<p class="demo-bar" id="top">デザインサンプル｜このサイトは Nook Design が制作した<strong>架空の店舗</strong>のWebサイトです。実在の店舗とは関係ありません。</p>
+
+<header class="header">
+  <div class="container header__inner">
+    <a class="logo" href="#top" aria-label="酒肴 灯ノ間 トップへ">
+      <span class="logo__sub">酒肴</span><span class="logo__main">灯ノ間</span>
+    </a>
+    <nav class="nav" aria-label="メインメニュー">
+      <ul>
+        <li><a href="#concept">想い</a></li>
+        <li><a href="#dishes">お料理</a></li>
+        <li><a href="#course">コース</a></li>
+        <li><a href="#info">店舗情報</a></li>
+      </ul>
+    </nav>
+    <button class="btn js-reserve" type="button">ご予約<span class="btn__tag">デモ</span></button>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span class="sr-only">メニューを開く</span>
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <ul>
+    <li><a href="#concept">想い<span class="en">Concept</span></a></li>
+    <li><a href="#dishes">お料理<span class="en">Seasonal Dishes</span></a></li>
+    <li><a href="#course">コース<span class="en">Course</span></a></li>
+    <li><a href="#info">店舗情報<span class="en">Information</span></a></li>
+    <li><a href="#works">制作について<span class="en">Works</span></a></li>
+  </ul>
+  <button class="btn js-reserve" type="button">ご予約<span class="btn__tag">デモ</span></button>
+</div>
+
+<main>
+  <!-- ヒーロー -->
+  <section class="hero" aria-label="トップ">
+    <div class="container hero__inner">
+      <h1 class="hero__copy"><span>灯のもとで、</span><span>旬を味わう。</span></h1>
+      <div class="hero__side">
+        <svg class="hero__mark" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="46" fill="none" stroke="#7a1e24" stroke-width="1.5" stroke-dasharray="262 28" transform="rotate(-70 50 50)"/>
+          <text x="50" y="62" text-anchor="middle" font-size="36" font-family="Shippori Mincho, serif" font-weight="600" fill="#f2ebdd">灯</text>
+        </svg>
+        <p class="hero__name">酒肴<strong>灯ノ間</strong></p>
+        <p class="hero__lead">旬の魚と季節の肴、<br>そして日本酒の店。</p>
+        <p class="hero__scroll">Scroll</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- コンセプト -->
+  <section class="section section--light" id="concept">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="en">Concept</p>
+        <h2>一灯、一献。</h2>
+      </div>
+      <div class="concept__body">
+        <div class="concept__text reveal">
+          <p>街の喧騒から一歩入ると、<br>灯りをひとつ落とした、静かな空間。</p>
+          <p>その日に仕入れた旬の魚と季節の野菜を、<br>炭火と出汁で、ていねいに仕立てます。</p>
+          <p>カウンター八席と、個室が二つ。<br>一献を傾けながら、ゆっくりと夜をお過ごしください。</p>
+        </div>
+        <ul class="points reveal">
+          <li class="point">
+            <span class="point__num">一</span>
+            <div><h3>旬を、その日に</h3><p>市場から届く魚と季節の野菜。その日いちばんの素材で献立を組みます。</p></div>
+          </li>
+          <li class="point">
+            <span class="point__num">二</span>
+            <div><h3>炭火と出汁</h3><p>香ばしさは炭火で、やさしさは出汁で。素材の持ち味を引き出す二つの技。</p></div>
+          </li>
+          <li class="point">
+            <span class="point__num">三</span>
+            <div><h3>料理に寄り添う酒</h3><p>全国の蔵から選んだ日本酒を、季節と料理に合わせてご用意します。</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- おすすめ料理 -->
+  <section class="section" id="dishes">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="en">Seasonal Dishes</p>
+        <h2>秋のおすすめ</h2>
+        <p>旬を迎えた秋の恵みを、三品。</p>
+      </div>
+      <div class="dishes">
+        <!-- 写真は images/ フォルダの sanma.jpg・tempura.jpg・takikomi.jpg を表示します。ファイルがないときは差し替え用の枠を表示します -->
+        <article class="dish reveal">
+          <div class="dish__photo">
+            <span class="dish__kanji" aria-hidden="true">秋刀魚</span>
+            <span class="dish__label">Photo</span>
+            <img src="images/sanma.jpg" alt="秋刀魚の塩焼き" loading="lazy" onerror="this.remove()">
+            <span class="dish__num">其の一</span>
+          </div>
+          <div class="dish__body">
+            <h3>秋刀魚の塩焼き</h3>
+            <p>脂ののった旬の秋刀魚を、炭火でじっくりと焼き上げました。大根おろしとレモンを添えて。</p>
+            <p class="dish__price">¥1,080<small>（税込）</small></p>
+          </div>
+        </article>
+        <article class="dish reveal">
+          <div class="dish__photo">
+            <span class="dish__kanji" aria-hidden="true">天麩羅</span>
+            <span class="dish__label">Photo</span>
+            <img src="images/tempura.jpg" alt="きのこの天ぷら" loading="lazy" onerror="this.remove()">
+            <span class="dish__num">其の二</span>
+          </div>
+          <div class="dish__body">
+            <h3>きのこの天ぷら</h3>
+            <p>舞茸に椎茸。香り高い秋のきのこを、薄衣でさっくりと揚げました。</p>
+            <p class="dish__price">¥880<small>（税込）</small></p>
+          </div>
+        </article>
+        <article class="dish reveal">
+          <div class="dish__photo">
+            <span class="dish__kanji" aria-hidden="true">炊込飯</span>
+            <span class="dish__label">Photo</span>
+            <img src="images/takikomi.jpg" alt="きのこの炊き込みご飯" loading="lazy" onerror="this.remove()">
+            <span class="dish__num">其の三</span>
+          </div>
+          <div class="dish__body">
+            <h3>きのこの炊き込みご飯</h3>
+            <p>きのこの旨みと出汁がしみこんだ、秋の炊き込みご飯。〆の一杯にどうぞ。</p>
+            <p class="dish__price">¥780<small>（税込）</small></p>
+          </div>
+        </article>
+      </div>
+      <p class="note" style="margin-top:48px">※ 料理の内容・価格は架空です。料理写真はAIで作成したイメージ画像です。</p>
+    </div>
+  </section>
+
+  <!-- コース -->
+  <section class="section section--light" id="course">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="en">Course</p>
+        <h2>おまかせコース</h2>
+        <p>季節の献立を、お好みの品数で。</p>
+      </div>
+      <div class="courses">
+        <article class="course reveal">
+          <p class="course__en">Akari</p>
+          <h3>灯<small>あかり</small></h3>
+          <p class="course__price">¥8,800<small>（税込）</small></p>
+          <p class="course__desc">はじめての方にもおすすめの、季節を味わう全八品。</p>
+          <ul class="course__menu">
+            <li><span>先付</span><span>季節の小鉢</span></li>
+            <li><span>お造り</span><span>旬の魚 三種</span></li>
+            <li><span>焼物</span><span>秋刀魚の塩焼き</span></li>
+            <li><span>揚物</span><span>きのこの天ぷら</span></li>
+            <li><span>食事</span><span>炊き込みご飯</span></li>
+            <li><span>ほか</span><span>椀物・甘味 など</span></li>
+          </ul>
+        </article>
+        <article class="course course--featured reveal">
+          <span class="course__badge">おすすめ</span>
+          <p class="course__en">Yoi</p>
+          <h3>宵<small>よい</small></h3>
+          <p class="course__price">¥12,100<small>（税込）</small></p>
+          <p class="course__desc">炭火焼きと土鍋ご飯を楽しむ、灯ノ間いちばん人気の全十品。</p>
+          <ul class="course__menu">
+            <li><span>先付</span><span>季節の小鉢 二種</span></li>
+            <li><span>お造り</span><span>旬の魚 五種</span></li>
+            <li><span>焼物</span><span>本日の炭火焼き</span></li>
+            <li><span>揚物</span><span>きのこの天ぷら</span></li>
+            <li><span>食事</span><span>土鍋炊き きのこご飯</span></li>
+            <li><span>ほか</span><span>椀物・強肴・甘味 など</span></li>
+          </ul>
+        </article>
+        <article class="course reveal">
+          <p class="course__en">Pairing</p>
+          <h3>日本酒ペアリング</h3>
+          <p class="course__price">＋¥5,500<small>（税込）</small></p>
+          <p class="course__desc">コースの料理に合わせて、日本酒を五種ご用意します。</p>
+          <ul class="course__menu">
+            <li><span>内容</span><span>日本酒 五種（各 60ml）</span></li>
+            <li><span>対象</span><span>灯・宵コース</span></li>
+            <li><span>備考</span><span>ノンアルコールもご用意</span></li>
+          </ul>
+        </article>
+      </div>
+      <p class="note course-notes">※ コースは前日までのご予約制です。献立は仕入れにより変わります。<br>※ コース名・内容・価格はすべて架空です。</p>
+    </div>
+  </section>
+
+  <!-- 店舗情報 -->
+  <section class="section" id="info">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="en">Information</p>
+        <h2>店舗情報</h2>
+        <p><span class="fiction">掲載している情報はすべて架空です</span></p>
+      </div>
+      <div class="info">
+        <dl class="info__list reveal">
+          <div class="info__row"><dt>店名</dt><dd>酒肴 灯ノ間（しゅこう ひのま）</dd></div>
+          <div class="info__row"><dt>営業時間</dt><dd>17:00〜23:00<small>料理 L.O. 22:00 ／ ドリンク L.O. 22:30</small></dd></div>
+          <div class="info__row"><dt>定休日</dt><dd>日曜日・祝日</dd></div>
+          <div class="info__row"><dt>席数</dt><dd>カウンター 8席 ／ 個室 2室<small>個室は各4名さままで</small></dd></div>
+          <div class="info__row"><dt>アクセス</dt><dd>灯ノ間駅 東口より徒歩3分<small>※ 架空の駅名です</small></dd></div>
+          <div class="info__row"><dt>住所・電話</dt><dd>架空の店舗のため掲載していません</dd></div>
+        </dl>
+        <div class="info__visual reveal">
+          <div>
+            <svg viewBox="0 0 72 72" aria-hidden="true">
+              <path d="M36 66s22-20 22-36a22 22 0 1 0-44 0c0 16 22 36 22 36Z" fill="none" stroke="#7a1e24" stroke-width="1.5"/>
+              <circle cx="36" cy="30" r="7" fill="none" stroke="#f2ebdd" stroke-width="1.2"/>
+            </svg>
+            <p>地図エリア<br>実際のお店では、ここに地図を表示します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 予約 -->
+  <section class="reserve" id="reserve">
+    <div class="container reveal">
+      <p class="en">Reservation</p>
+      <h2>ご予約</h2>
+      <p>カウンター・個室ともに、<br>ご予約のお客さまを優先してご案内しております。</p>
+      <button class="btn btn--light js-reserve" type="button">Webで予約する<span class="btn__tag">デモ</span></button>
+      <p class="note">※ デモ用のボタンです。実際の予約はできません。</p>
+    </div>
+  </section>
+
+  <!-- Nook Design 制作実績 -->
+  <section class="section works" id="works">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="en">Works by Nook Design</p>
+        <h2>このサイトについて</h2>
+        <p>Nook Design が制作した、飲食店向け1ページWebサイトのデザインサンプルです。店名・料理・価格・店舗情報はすべて架空のもので、料理写真はAIで作成したイメージ画像です。</p>
+      </div>
+      <div class="works__grid">
+        <div class="reveal">
+          <h3>制作概要</h3>
+          <dl class="works__table">
+            <div><dt>制作</dt><dd>Nook Design</dd></div>
+            <div><dt>種類</dt><dd>自主制作（架空の和食居酒屋）</dd></div>
+            <div><dt>担当範囲</dt><dd>コンセプト設計・文章・Webデザイン・コーディング</dd></div>
+            <div><dt>対応端末</dt><dd>スマートフォン・タブレット・パソコン</dd></div>
+            <div><dt>使用技術</dt><dd>HTML ／ CSS ／ JavaScript（最小限）</dd></div>
+          </dl>
+        </div>
+        <div class="reveal">
+          <h3>デザインのポイント</h3>
+          <ul class="works__points">
+            <li><strong>黒・生成り・深紅の三色</strong><span>色数をしぼり、上質な和食店の落ち着きを表現しました。</span></li>
+            <li><strong>縦書きのキャッチコピー</strong><span>最初の画面で、和の空気感と店の世界観を伝えます。</span></li>
+            <li><strong>スマートフォンで予約しやすく</strong><span>画面の下に予約ボタンを固定し、いつでも予約へ進めます。</span></li>
+            <li><strong>写真を差し替えるだけで運用できる</strong><span>お店の写真を images フォルダに入れるだけで、料理写真を差し替えられます。</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <a class="logo" href="#top"><span class="logo__sub">酒肴</span><span class="logo__main">灯ノ間</span></a>
+    <p>本サイトはデザインサンプルです。実在の店舗・団体とは関係ありません。</p>
+    <p class="footer__copy">Design &amp; Coding — Nook Design</p>
+  </div>
+</footer>
+
+<div class="sticky-cta" aria-hidden="true">
+  <button class="btn js-reserve" type="button" tabindex="-1">ご予約はこちら<span class="btn__tag">デモ</span></button>
+</div>
+
+<dialog class="dialog" id="reserve-dialog" aria-labelledby="reserve-dialog-title">
+  <h2 id="reserve-dialog-title">デモ用のボタンです</h2>
+  <p>このサイトはデザインサンプルのため、実際のご予約はできません。<br>実際のお店では、ここから予約ページや電話につながります。</p>
+  <button class="btn btn--ghost js-close" type="button">閉じる</button>
+</dialog>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  // ヘッダー：スクロールしたら背景をつける ／ スマホの予約ボタンを表示する
+  var header = document.querySelector('.header');
+  var cta = document.querySelector('.sticky-cta');
+  var ctaBtn = cta.querySelector('button');
+  function onScroll() {
+    var y = window.scrollY;
+    header.classList.toggle('is-scrolled', y > 10);
+    var show = y > window.innerHeight * 0.6;
+    cta.classList.toggle('is-visible', show);
+    cta.setAttribute('aria-hidden', String(!show));
+    ctaBtn.tabIndex = show ? 0 : -1;
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // スマホのメニュー
+  var menuBtn = document.querySelector('.menu-btn');
+  var drawer = document.getElementById('drawer');
+  function setMenu(open) {
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.querySelector('.sr-only').textContent = open ? 'メニューを閉じる' : 'メニューを開く';
+    drawer.classList.toggle('is-open', open);
+    drawer.setAttribute('aria-hidden', String(!open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  menuBtn.addEventListener('click', function () {
+    setMenu(menuBtn.getAttribute('aria-expanded') !== 'true');
+  });
+  drawer.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { setMenu(false); });
+  });
+  // メニューを開いたまま画面が広くなったとき（iPad の画面分割など）は閉じる
+  var wide = window.matchMedia('(min-width: 768px)');
+  function onWide(e) { if (e.matches) setMenu(false); }
+  if (wide.addEventListener) wide.addEventListener('change', onWide);
+  else if (wide.addListener) wide.addListener(onWide);
+
+  // 予約ボタン（デモ）：お知らせ画面を出す
+  var dialog = document.getElementById('reserve-dialog');
+  document.querySelectorAll('.js-reserve').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setMenu(false);
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+      else alert('デモ用のボタンです。実際のご予約はできません。');
+    });
+  });
+  dialog.querySelector('.js-close').addEventListener('click', function () { dialog.close(); });
+  dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
+
+  // スクロールに合わせて、ふわっと表示する
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('is-shown'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-shown');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -10% 0px' });
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>
