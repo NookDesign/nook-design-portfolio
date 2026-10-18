@@ -111,6 +111,9 @@
 
   function setNav(open, returnFocus) {
     if (!toggle || !nav) return;
+    /* メニューはヘッダーのすぐ下から表示する（お知らせの帯が折り返して高さが変わっても重ならないように） */
+    var headerEl = document.getElementById("site-header");
+    if (open && headerEl) nav.style.top = headerEl.offsetHeight + "px";
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
     if (toggleLabel) toggleLabel.textContent = open ? "メニューを閉じる" : "メニューを開く";
     nav.classList.toggle("is-open", open);

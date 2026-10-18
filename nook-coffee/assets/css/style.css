@@ -182,21 +182,26 @@ button {
   inset: 0 0 auto;
   z-index: 100;
   color: var(--c-on-dark);
+}
+
+/* ヘッダーには backdrop-filter（すりガラス）を使わない。
+   使うとスマホ用メニュー（position: fixed）がヘッダーの高さに閉じ込められ、文字が重なるため */
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   transition: background-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
 }
 
-.site-header.is-scrolled,
-html.is-nav-open .site-header {
-  background: rgba(14, 12, 10, 0.94);
+.site-header.is-scrolled::before {
+  background: var(--c-black);
   box-shadow: 0 1px 0 var(--c-line-dark);
 }
 
-@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
-  .site-header.is-scrolled {
-    background: rgba(14, 12, 10, 0.82);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
-  }
+html.is-nav-open .site-header::before {
+  background: var(--c-ink);
+  box-shadow: 0 1px 0 var(--c-line-dark);
 }
 
 .notice-bar {
@@ -221,6 +226,12 @@ html.is-nav-open .site-header {
   font-style: italic;
   letter-spacing: 0.06em;
   margin-right: 0.6em;
+}
+
+@media (max-width: 374px) {
+  .notice-bar strong {
+    display: none;
+  }
 }
 
 .site-header__inner {
@@ -357,17 +368,18 @@ html.is-nav-open .site-header {
     display: block;
   }
 
+  /* ヘッダーの下から画面の下までをメニューにする（長いときはこの中だけスクロール） */
   .global-nav {
     position: fixed;
-    inset: 0;
+    inset: calc(var(--header-h) + var(--notice-h)) 0 0;
     z-index: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: calc(var(--header-h) + var(--notice-h) + 24px) var(--gutter) 40px;
+    padding: 24px var(--gutter) 40px;
     background: var(--c-ink);
     background-image: radial-gradient(120% 80% at 100% 0%, rgba(90, 62, 44, 0.45), transparent 60%);
     overflow-y: auto;
+    overscroll-behavior: contain;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.4s var(--ease), visibility 0s linear 0.4s;
@@ -379,9 +391,15 @@ html.is-nav-open .site-header {
     transition: opacity 0.4s var(--ease), visibility 0s;
   }
 
+  /* 上下中央にそろえる。画面より長いときは上から並べてスクロールさせる（中央寄せのままだと上がロゴに重なる） */
   .global-nav__list {
     flex-direction: column;
     gap: 0;
+    margin-top: auto;
+  }
+
+  .global-nav__extra {
+    margin-bottom: auto;
   }
 
   .global-nav__list li {
@@ -1404,7 +1422,7 @@ html.is-nav-open .site-header {
   position: sticky;
   top: calc(var(--header-h) + var(--notice-h));
   z-index: 10;
-  background: rgba(243, 237, 226, 0.94);
+  background: var(--c-ivory);
   border-bottom: 1px solid var(--c-line-light);
 }
 
