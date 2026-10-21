@@ -6,7 +6,8 @@
 | --- | --- | --- |
 | NOOK COFFEE | 架空の自家焙煎カフェの公式サイト（5ページ） | https://nookdesign.github.io/nook-design-portfolio/nook-coffee/ |
 | 酒肴 灯ノ間 | 架空の和食居酒屋の1ページWebサイト | https://nookdesign.github.io/nook-design-portfolio/izakaya-hinoma/ |
+| RENOVA | 架空の建築・リノベーションブランドの公式サイト（7ページ） | https://nookdesign.github.io/nook-design-portfolio/renova/ |
 
-- 掲載している店舗・料理・価格・店舗情報は、すべて架空のものです。
+- 掲載している店舗・ブランド・料理・価格・店舗情報・会社情報は、すべて架空のものです。
 - 写真は AI で作成したイメージ画像です（酒肴 灯ノ間は ChatGPT で作成）。
 - このリポジトリには公開してよいファイルだけを入れます。案件資料や顧客情報は入れません。

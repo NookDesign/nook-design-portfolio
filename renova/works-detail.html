@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Works Detail｜施工事例（架空のブランド RENOVA）</title>
+  <meta name="description" content="RENOVA の施工事例の詳細です。設計の考え方、ビフォー・アフター、写真ギャラリー、施工概要を紹介します。掲載している事例はすべて架空のものです。">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#252522">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="RENOVA（Nook Design 制作実績・架空のブランド）">
+  <meta property="og:title" content="施工事例（架空のブランド RENOVA）">
+  <meta property="og:description" content="設計の考え方、ビフォー・アフター、写真ギャラリーで紹介する施工事例（架空）。">
+  <meta property="og:url" content="https://nookdesign.github.io/nook-design-portfolio/renova/works-detail.html">
+  <meta property="og:image" content="https://nookdesign.github.io/nook-design-portfolio/renova/assets/images/photos/works-urban-living-01.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Noto+Sans+JP:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/photo-sizes.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/detail.js" defer></script>
+</head>
+<body data-page="works" id="top">
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <div data-include="header"></div>
+  <noscript>
+    <nav class="noscript-nav" aria-label="メインメニュー">
+      <a href="index.html">Home</a><a href="works.html">Works</a><a href="contact.html">Contact</a>
+      <p>※ 施工事例の詳細は JavaScript を使って表示しています。</p>
+    </nav>
+  </noscript>
+
+  <!-- 事例の内容は assets/js/detail.js が data.js のデータから作ります -->
+  <main id="main" data-detail></main>
+
+  <!-- 写真の拡大表示（ライトボックス） -->
+  <dialog class="lightbox" aria-label="写真の拡大表示" data-lightbox>
+    <div class="lightbox__bar">
+      <p class="lightbox__count" aria-live="polite" data-lb-count></p>
+      <button class="lightbox__close" type="button" data-lb-close>
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg>
+        <span class="visually-hidden">閉じる</span>
+      </button>
+    </div>
+    <div class="lightbox__stage" data-lb-stage>
+      <img class="lightbox__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="" data-lb-img>
+      <button class="lightbox__nav lightbox__nav--prev" type="button" data-lb-prev>
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12.5 3.5L6 10l6.5 6.5"/></svg>
+        <span class="visually-hidden">前の写真</span>
+      </button>
+      <button class="lightbox__nav lightbox__nav--next" type="button" data-lb-next>
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M7.5 3.5L14 10l-6.5 6.5"/></svg>
+        <span class="visually-hidden">次の写真</span>
+      </button>
+    </div>
+    <p class="lightbox__caption" data-lb-caption></p>
+  </dialog>
+
+  <div data-include="footer"></div>
+</body>
+</html>

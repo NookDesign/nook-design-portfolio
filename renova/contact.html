@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Contact｜お問い合わせ（デモ）｜架空のブランド RENOVA</title>
+  <meta name="description" content="RENOVA へのお問い合わせフォームです。このフォームはポートフォリオ用のデモで、入力内容はどこにも送信・保存されません。">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#252522">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RENOVA（Nook Design 制作実績・架空のブランド）">
+  <meta property="og:title" content="Contact｜お問い合わせ（デモ）｜RENOVA">
+  <meta property="og:description" content="お問い合わせフォームのデモです。入力内容は送信・保存されません。">
+  <meta property="og:url" content="https://nookdesign.github.io/nook-design-portfolio/renova/contact.html">
+  <meta property="og:image" content="https://nookdesign.github.io/nook-design-portfolio/renova/assets/images/photos/contact-entrance-01.jpg"
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Noto+Sans+JP:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/photo-sizes.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/contact.js" defer></script>
+</head>
+<body data-page="contact" id="top">
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <div data-include="header"></div>
+  <noscript>
+    <nav class="noscript-nav" aria-label="メインメニュー">
+      <a href="index.html">Home</a><a href="concept.html">Concept</a><a href="works.html">Works</a><a href="service.html">Service</a><a href="about.html">About</a>
+      <p>※ このフォームのデモは JavaScript を使って動きます。JavaScript が無効のため、入力しても送信ボタンは押せません。</p>
+    </nav>
+  </noscript>
+
+  <main id="main">
+    <header class="page-head bg-plaster bg-blueprint">
+      <div class="container grid-12 page-head__grid">
+        <div class="page-head__title">
+          <nav aria-label="現在地"><ol class="breadcrumb"><li><a href="index.html">Home</a></li><li aria-current="page">Contact</li></ol></nav>
+          <h1>
+            <span class="display en" lang="en">Contact</span>
+            <span class="h1">お問い合わせ</span>
+          </h1>
+        </div>
+        <div class="page-head__aside">
+          <p class="lead"><span class="ph">住まいのこと、</span><span class="ph">まずは聞かせてください。</span></p>
+          <p class="muted small">計画が決まっていない段階でも構いません。今の住まいで感じていることを、そのままお書きください。</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="section section--list bg-white" aria-label="お問い合わせフォーム">
+      <div class="container grid-12 contact-layout">
+        <div class="contact-layout__form">
+          <div class="demo-notice" role="note">
+            <span class="demo-notice__badge">DEMO</span>
+            <strong>このフォームはデモです。入力した内容は、どこにも送信・保存されません。</strong>
+            <p>RENOVA はポートフォリオ用の架空のブランドです。入力チェック・確認画面・完了画面の動きを確かめるためのフォームなので、実際のご相談やご連絡には使えません。</p>
+          </div>
+
+          <ol class="steps" aria-label="入力の手順">
+            <li aria-current="step" data-step="input">入力</li>
+            <li data-step="confirm">確認</li>
+            <li data-step="done">完了</li>
+          </ol>
+
+          <!-- 1. 入力 -->
+          <form class="contact-form" novalidate data-form>
+            <div class="form-errors" role="alert" tabindex="-1" hidden data-error-summary>
+              <h2>入力内容を確認してください</h2>
+              <ul data-error-list></ul>
+            </div>
+
+            <fieldset class="field" data-field="type">
+              <legend class="field__label">お問い合わせの種類 <span class="req">必須</span></legend>
+              <div class="choices" id="type" aria-describedby="type-error">
+                <label class="choice"><input type="radio" name="type" value="住宅リノベーション"><span>住宅リノベーション</span></label>
+                <label class="choice"><input type="radio" name="type" value="空間設計・内装デザイン"><span>空間設計・内装デザイン</span></label>
+                <label class="choice"><input type="radio" name="type" value="素材・設備のご相談"><span>素材・設備のご相談</span></label>
+                <label class="choice"><input type="radio" name="type" value="その他"><span>その他</span></label>
+              </div>
+              <p class="field__error" id="type-error" data-error></p>
+            </fieldset>
+
+            <div class="field" data-field="name">
+              <label class="field__label" for="name">お名前 <span class="req">必須</span></label>
+              <input class="input" type="text" id="name" name="name" autocomplete="name" maxlength="50" required aria-describedby="name-error">
+              <p class="field__error" id="name-error" data-error></p>
+            </div>
+
+            <div class="field" data-field="email">
+              <label class="field__label" for="email">メールアドレス <span class="req">必須</span></label>
+              <input class="input" type="email" id="email" name="email" autocomplete="email" inputmode="email" maxlength="120" required aria-describedby="email-hint email-error">
+              <p class="field__hint" id="email-hint">例：name@example.com</p>
+              <p class="field__error" id="email-error" data-error></p>
+            </div>
+
+            <div class="field" data-field="tel">
+              <label class="field__label" for="tel">電話番号 <span class="opt">任意</span></label>
+              <input class="input" type="tel" id="tel" name="tel" autocomplete="tel" inputmode="tel" maxlength="20" aria-describedby="tel-hint tel-error">
+              <p class="field__hint" id="tel-hint">数字とハイフンで入力してください。例：03-0000-0000</p>
+              <p class="field__error" id="tel-error" data-error></p>
+            </div>
+
+            <div class="field" data-field="message">
+              <label class="field__label" for="message">ご相談内容 <span class="req">必須</span></label>
+              <textarea class="textarea" id="message" name="message" maxlength="1000" required aria-describedby="message-hint message-count message-error"></textarea>
+              <p class="field__hint" id="message-hint">住まいの種類（マンション・戸建て）、広さ、築年数、気になっていることなど。10文字以上でご記入ください。</p>
+              <p class="counter" id="message-count" aria-live="polite" data-count>0 / 1000文字</p>
+              <p class="field__error" id="message-error" data-error></p>
+            </div>
+
+            <div class="field" data-field="agree">
+              <p class="field__label">個人情報の取り扱い <span class="req">必須</span></p>
+              <details class="privacy">
+                <summary>個人情報の取り扱いについて（内容を見る）</summary>
+                <div>
+                  <p>このフォームはデモのため、入力された情報を送信・保存・利用することはありません。ページを閉じると入力内容は消えます。</p>
+                  <p>実際のサービスとして運用する場合は、取得する情報の利用目的、保存期間、第三者への提供の有無、問い合わせ窓口をここに記載します。</p>
+                </div>
+              </details>
+              <label class="agree"><input type="checkbox" id="agree" name="agree" aria-describedby="agree-error"><span>個人情報の取り扱いについて確認し、同意します</span></label>
+              <p class="field__error" id="agree-error" data-error></p>
+            </div>
+
+            <div class="form-actions">
+              <!-- JavaScript が使えないときは押せない（デモなので、どこにも送信しないため） -->
+              <button class="btn" type="submit" disabled data-to-confirm><span>入力内容を確認する</span><span class="arrow" aria-hidden="true"></span></button>
+            </div>
+          </form>
+
+          <!-- 2. 確認 -->
+          <section class="contact-confirm" hidden data-confirm aria-labelledby="confirm-title" tabindex="-1">
+            <h2 class="h2" id="confirm-title">入力内容の確認</h2>
+            <p class="muted small">内容をご確認のうえ、「送信する（デモ）」を押してください。デモのため、実際には送信されません。</p>
+            <dl class="confirm-list" data-confirm-list></dl>
+            <div class="form-actions">
+              <button class="btn btn--ghost" type="button" data-back><span class="arrow arrow--back" aria-hidden="true"></span><span>修正する</span></button>
+              <button class="btn" type="button" data-send><span>送信する（デモ）</span><span class="arrow" aria-hidden="true"></span></button>
+            </div>
+          </section>
+
+          <!-- 3. 完了 -->
+          <section class="complete" hidden data-done aria-labelledby="done-title" tabindex="-1">
+            <p class="en-l" lang="en">Thank you.</p>
+            <h2 class="h2" id="done-title">デモの送信が完了しました</h2>
+            <p>これはデモのため、<strong>入力内容は実際には送信されていません</strong>。どこにも保存されていないので、安心してページを閉じてください。</p>
+            <p class="muted small">実際のサービスでは、この画面で「◯営業日以内にご連絡します」などの案内を表示します。</p>
+            <div class="form-actions">
+              <button class="btn btn--ghost" type="button" data-reset><span>もう一度入力する</span><span class="arrow" aria-hidden="true"></span></button>
+              <a class="btn" href="index.html"><span>トップページへ</span><span class="arrow" aria-hidden="true"></span></a>
+            </div>
+          </section>
+        </div>
+
+        <aside class="contact-layout__aside" aria-label="ご相談について">
+          <div class="media">
+            <img src="assets/images/photos/contact-entrance-01-1024.webp" srcset="assets/images/photos/contact-entrance-01-800.webp 800w, assets/images/photos/contact-entrance-01-1024.webp 1024w" sizes="30vw" width="1024" height="1536" alt="木々の間を抜ける石のアプローチと、コンクリートの住宅の玄関" loading="lazy" decoding="async">
+          </div>
+          <dl class="aside-list">
+            <div><dt>返信の目安</dt><dd>3営業日以内（架空の設定）</dd></div>
+            <div><dt>ご相談の費用</dt><dd>初回のご相談は無料（架空の設定）</dd></div>
+            <div><dt>あると話が早いもの</dt><dd>間取り図、今の住まいの写真、ご希望のイメージ写真</dd></div>
+          </dl>
+          <p class="small muted aside-more"><a href="service.html#flow-title">相談から完成までの流れ</a>もあわせてご覧ください。</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="footer"></div>
+</body>
+</html>
