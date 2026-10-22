@@ -1245,8 +1245,8 @@ strong { font-weight: 700; }
   font-family: var(--font-en);
   font-size: 12px;
 }
-.step + .step .step__aside { top: 24px; }
-.step__aside { position: absolute; top: 0; right: 0; }
+/* 見出しの下に通常の行として置く（重ねて配置すると、iPhone の Safari で文字数の表示に重なったため） */
+.step__aside { justify-self: start; margin: -8px 0 -4px -10px; }
 .link-btn {
   display: inline-flex;
   align-items: center;
@@ -1317,6 +1317,7 @@ strong { font-weight: 700; }
 .field__top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
 .field__label { font-size: 14px; font-weight: 700; line-height: 1.6; }
 .field__label em {
+  display: inline-block; /* 「必須」「任意」の印が途中で改行されないようにする */
   margin-left: 8px;
   padding: 1px 7px;
   border-radius: 6px;

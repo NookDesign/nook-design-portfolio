@@ -476,7 +476,9 @@
   // もう一度試せば直る可能性があるエラー
   var RETRYABLE = ["upstream_timeout", "upstream_unavailable", "upstream_rate_limited", "empty_response", "internal_error", "timeout", "network"];
   // AI を使えない状態（サンプルへ案内する）
-  var NO_AI = ["not_configured", "limiter_unavailable", "client_daily", "total_daily", "offline"];
+  var NO_AI = ["not_configured", "limiter_unavailable", "client_daily", "total_daily", "offline", "upstream_spend_limit", "upstream_billing", "upstream_auth"];
+  // サービス側の設定や上限で止まっている状態（このあとも使えないので、接続状態を「一時停止中」にする）
+  var PAUSED = ["upstream_spend_limit", "upstream_billing", "upstream_auth", "limiter_unavailable"];
 
   function renderError(code, message) {
     var actions = [];
@@ -621,6 +623,7 @@
           message += others.map(function (k) { return String(err.fields[k]); }).join(" ");
         }
         if (err.code === "not_configured") setStatus("not_configured");
+        if (PAUSED.indexOf(err.code) !== -1) setStatus("unavailable");
         if (err.code === "client_daily" || err.code === "total_daily") setStatus(state.ai === "mock" ? "mock" : "ready", 0);
         renderError(err.code || "unknown", message);
       })
