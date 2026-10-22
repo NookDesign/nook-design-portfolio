@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NOVA AI｜AI文章作成SaaS（プロトタイプ）｜Nook Design 制作実績</title>
-<meta name="description" content="Nook Design が UI/UX 設計・LP デザイン・フロントエンド実装を行った、AI文章作成SaaS「NOVA AI」のプロトタイプです（架空のサービス）。">
+<meta name="description" content="Nook Design が UI/UX 設計・LP デザイン・フロントエンド実装を行った、AI文章作成SaaS「NOVA AI」のプロトタイプ（SaaSプロトタイプ・Webアプリケーション。架空のサービス）です。">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Nook Design">
 <meta property="og:title" content="NOVA AI｜AI文章作成SaaS（プロトタイプ）｜Nook Design 制作実績">
@@ -55,6 +55,7 @@ h1 { font-size: clamp(30px, 7vw, 44px); font-weight: 600; letter-spacing: .14em;
 .facts div { display: grid; gap: 4px; padding: 14px 0; border-bottom: 1px solid var(--line); }
 .facts dt { font-size: 12px; letter-spacing: .2em; color: var(--accent); }
 .facts dd { margin: 0; font-size: 15px; }
+.facts .wide { grid-column: 1 / -1; }
 
 section { margin-top: 80px; }
 .num { margin: 0; font-size: 13px; letter-spacing: .3em; color: var(--accent); }
@@ -101,7 +102,7 @@ a:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-
 <main>
   <a class="back" href="../">← 制作実績一覧へ</a>
 
-  <p class="label">WORKS｜SAAS UI/UX・WEB APPLICATION</p>
+  <p class="label">WORKS｜SAAS PROTOTYPE・WEB APPLICATION</p>
   <h1>NOVA AI</h1>
   <p class="subtitle">AI文章作成SaaS（プロトタイプ）</p>
   <p class="lead">個人事業主や小さなお店が、SNS の投稿文・商品紹介・営業メール・ランディングページの文章を AI で下書きする――そんなサービスを想定して、<span class="nowrap">ランディングページ</span>と文章作成画面の UI/UX 設計・デザイン・実装を行いました。</p>
@@ -116,12 +117,13 @@ a:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-
   </figure>
 
   <dl class="facts">
-    <div><dt>作品分類</dt><dd>SaaS UI/UX・Webアプリケーション（プロトタイプ）</dd></div>
+    <div><dt>作品分類</dt><dd>SaaSプロトタイプ・Webアプリケーション</dd></div>
     <div><dt>制作時期</dt><dd>2026年10月</dd></div>
     <div><dt>担当範囲</dt><dd>企画・情報設計・UI/UX デザイン・LP デザイン・文章・フロントエンド実装・サーバー処理の試作</dd></div>
     <div><dt>対応画面</dt><dd>スマートフォン・タブレット・PC（幅320〜1920px）</dd></div>
     <div><dt>使用技術</dt><dd>HTML・CSS・JavaScript（フレームワークなし）</dd></div>
     <div><dt>想定した構成</dt><dd>Cloudflare Workers ＋ Claude API（試作・未公開）</dd></div>
+    <div class="wide"><dt>主な用途</dt><dd>SNS投稿文、商品・サービス紹介文、営業メール・問い合わせ返信文、ランディングページの構成・コピーの作成</dd></div>
   </dl>
 
   <section aria-labelledby="h-intent">
@@ -238,8 +240,8 @@ a:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-
         <p>本物の AI・確認用の模擬AI・サンプルの3種類を、印・説明文・枠線で区別。テスト用の結果が AI の結果に見えないようにしました。</p>
       </li>
       <li class="point">
-        <h3>AI 連携を想定した安全設計</h3>
-        <p>APIキーはサーバー側だけで扱う設計にし、入力の検証、利用回数の制限、内部情報を出さないエラー表示を試作しました。</p>
+        <h3>サーバー側での AI 連携の設計</h3>
+        <p>AI の呼び出しはサーバー側で行い、APIキーを画面に出さない構成に。入力の検証、利用回数の制限、内部情報を出さないエラー表示を試作しました（本物の AI での動作は未検証）。</p>
       </li>
       <li class="point">
         <h3>軽さと崩れにくさ</h3>
