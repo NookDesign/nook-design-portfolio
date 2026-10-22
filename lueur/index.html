@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lueur hair &amp; head spa｜光と水のヘッドスパ（架空のサロン・デザインサンプル）</title>
+  <meta name="description" content="窓辺の自然光とやさしい水の音に包まれる、ヘアサロン＆ヘッドスパ Lueur（リュール）。Nook Design がポートフォリオ用に制作した、架空の美容サロンのランディングページです。">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#F7F5F1">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lueur（Nook Design 制作実績・架空のサロン）">
+  <meta property="og:title" content="Lueur hair &amp; head spa（架空のサロン・デザインサンプル）">
+  <meta property="og:description" content="光と水をテーマにした、ヘアサロン＆ヘッドスパのランディングページのデザインサンプルです。">
+  <meta property="og:url" content="https://nookdesign.github.io/nook-design-portfolio/lueur/">
+  <meta property="og:image" content="https://nookdesign.github.io/nook-design-portfolio/lueur/assets/images/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Shippori+Mincho:wght@500;600&amp;family=Zen+Kaku+Gothic+New:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- ファーストビューの写真を先に読み込む（横長の画面は PC 用、縦長の画面はスマホ用の1枚だけ） -->
+  <link rel="preload" as="image" type="image/webp" media="(min-aspect-ratio: 1/1)" imagesrcset="assets/images/photos/hero-pc-800.webp 800w, assets/images/photos/hero-pc-1200.webp 1200w, assets/images/photos/hero-pc-1536.webp 1536w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" media="(max-aspect-ratio: 999/1000)" imagesrcset="assets/images/photos/hero-sp-800.webp 800w, assets/images/photos/hero-sp-1024.webp 1024w" imagesizes="100vw" fetchpriority="high">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <!-- サンプル表記（ページ上部） -->
+  <p class="sample-bar">本ページはNook Designのポートフォリオ用サンプルです。Lueurは架空の店舗であり、実在する同名店舗とは関係ありません。掲載写真はAI生成画像です。</p>
+
+  <header class="site-header" data-header>
+    <div class="site-header__inner">
+      <a class="logo" href="#top" aria-label="Lueur hair &amp; head spa ページの先頭へ">
+        <span class="logo__name" lang="fr">Lueur</span>
+        <span class="logo__sub" lang="en">hair &amp; head spa</span>
+      </a>
+      <nav class="site-nav" aria-label="ページ内メニュー">
+        <ul>
+          <li><a href="#concept">Concept</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#price">Price</a></li>
+          <li><a href="#flow">Flow</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#access">Access</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--reserve btn--small" href="#reserve-info" data-reserve>ご予約について</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 01 ファーストビュー -->
+    <section class="hero" id="top" aria-labelledby="hero-title" data-hero>
+      <picture class="hero__media">
+        <source media="(min-aspect-ratio: 1/1)" type="image/webp" srcset="assets/images/photos/hero-pc-800.webp 800w, assets/images/photos/hero-pc-1200.webp 1200w, assets/images/photos/hero-pc-1536.webp 1536w" sizes="100vw" width="1536" height="1024">
+        <img src="assets/images/photos/hero-sp-1024.webp" srcset="assets/images/photos/hero-sp-800.webp 800w, assets/images/photos/hero-sp-1024.webp 1024w" sizes="100vw" width="1024" height="1536" alt="レースのカーテン越しに朝の光が差す窓辺で、肩につく長さの髪をスタイリストに整えてもらう女性の後ろ姿" fetchpriority="high">
+      </picture>
+      <div class="hero__inner">
+        <div class="hero__card glass">
+          <p class="eyebrow" lang="en">Hair salon &amp; Head spa</p>
+          <h1 class="hero__title" id="hero-title"><span class="nowrap">光をまとう、</span><span class="nowrap">やわらかな髪へ。</span></h1>
+          <p class="hero__lead">窓辺の自然光と、やさしい水の音。<br>Lueur（リュール）は、髪と頭皮をゆっくりと整えるヘアサロン＆ヘッドスパです。</p>
+          <a class="btn btn--reserve" href="#reserve-info" data-reserve>ご予約について</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 コンセプト -->
+    <section class="section concept" id="concept" aria-labelledby="concept-title">
+      <div class="container concept__grid">
+        <div class="concept__photos">
+          <figure class="concept__photo concept__photo--main media">
+            <img src="assets/images/photos/concept-interior-1024.webp" srcset="assets/images/photos/concept-interior-800.webp 800w, assets/images/photos/concept-interior-1024.webp 1024w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 46vw, 72vw" width="1024" height="1536" alt="白い漆喰の壁とレースのカーテンに囲まれた、明るい店内。グレージュの革とオーク材の椅子が1脚、床に葉の影が落ちている" loading="lazy" decoding="async">
+          </figure>
+          <figure class="concept__photo concept__photo--sub media">
+            <img src="assets/images/photos/concept-detail-800.webp" srcset="assets/images/photos/concept-detail-800.webp 800w, assets/images/photos/concept-detail-1200.webp 1200w" sizes="(min-width: 1024px) 20vw, (min-width: 768px) 26vw, 48vw" width="1254" height="1254" alt="石のカウンターに置かれた、畳んだタオルと淡いブルーの陶器の小皿、すりガラスのボトル" loading="lazy" decoding="async">
+          </figure>
+        </div>
+        <div class="concept__text">
+          <p class="eyebrow" lang="en">Concept</p>
+          <h2 class="section-title" id="concept-title"><span class="nowrap">ほのかな光のように、</span><span class="nowrap">そっと寄り添う。</span></h2>
+          <p>「Lueur」は、フランス語で“ほのかな光”。<br>朝の光が差しこむ窓辺で、ひとりひとりの髪と頭皮の状態をていねいに見つめ、毎日の暮らしになじむスタイルをご提案します。</p>
+          <p>カットやカラーで印象を整えるだけでなく、水と指先でゆっくりとほぐすヘッドスパで、髪と心の両方を軽やかに。忙しい毎日の中に、静かに深呼吸できる時間をつくります。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 メニュー -->
+    <section class="section menu" id="menu" aria-labelledby="menu-title">
+      <svg class="deco-wave" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 120 C 240 40, 480 200, 720 120 S 1200 40, 1440 120"/><path d="M0 160 C 260 90, 500 230, 760 150 S 1220 90, 1440 160"/></svg>
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" lang="en">Menu</p>
+          <h2 class="section-title" id="menu-title">メニュー</h2>
+          <p class="section-lead">髪の悩みや、なりたい雰囲気に合わせて、4つのメニューを組み合わせられます。</p>
+        </div>
+        <p class="swipe-hint" aria-hidden="true">横にスワイプしてご覧ください</p>
+      </div>
+      <div class="menu__scroller" role="region" aria-label="メニューの一覧" tabindex="0">
+        <ul class="menu__list">
+          <li class="menu-card">
+            <figure class="menu-card__photo media">
+              <img src="assets/images/photos/menu-cut-800.webp" srcset="assets/images/photos/menu-cut-800.webp 800w, assets/images/photos/menu-cut-1024.webp 1024w" sizes="(min-width: 1024px) 270px, (min-width: 768px) 44vw, 74vw" width="1024" height="1536" alt="スタイリストの手が、コームとハサミで髪の毛先を整えている" loading="lazy" decoding="async">
+            </figure>
+            <div class="menu-card__body">
+              <p class="menu-card__en" lang="en">Cut</p>
+              <h3 class="menu-card__title">カット</h3>
+              <p>髪の生え方やクセを見ながら、乾かすだけでまとまる形に。伸びてもきれいなラインを目指します。</p>
+            </div>
+          </li>
+          <li class="menu-card">
+            <figure class="menu-card__photo media">
+              <img src="assets/images/photos/menu-color-800.webp" srcset="assets/images/photos/menu-color-800.webp 800w, assets/images/photos/menu-color-1024.webp 1024w" sizes="(min-width: 1024px) 270px, (min-width: 768px) 44vw, 74vw" width="1024" height="1536" alt="スタイリストの手が、ハイライトの入ったミルクティーベージュの髪の束を、窓からの光に透かしている" loading="lazy" decoding="async">
+            </figure>
+            <div class="menu-card__body">
+              <p class="menu-card__en" lang="en">Color</p>
+              <h3 class="menu-card__title">カラー</h3>
+              <p>肌の色や光の当たり方に合わせて、透明感のある色味をご提案。ツヤを残しながら色を重ねます。</p>
+            </div>
+          </li>
+          <li class="menu-card">
+            <figure class="menu-card__photo media">
+              <img src="assets/images/photos/menu-headspa-800.webp" srcset="assets/images/photos/menu-headspa-800.webp 800w, assets/images/photos/menu-headspa-1024.webp 1024w" sizes="(min-width: 1024px) 270px, (min-width: 768px) 44vw, 74vw" width="1024" height="1536" alt="きめ細かな泡に包まれた頭皮を、セラピストの指先がやさしくほぐしている" loading="lazy" decoding="async">
+            </figure>
+            <div class="menu-card__body">
+              <p class="menu-card__en" lang="en">Head spa</p>
+              <h3 class="menu-card__title">ヘッドスパ</h3>
+              <p>きめ細かな泡と指先で、頭皮をていねいに洗いほぐします。すっきりとした軽さが続きます。</p>
+            </div>
+          </li>
+          <li class="menu-card">
+            <figure class="menu-card__photo media">
+              <img src="assets/images/photos/menu-care-800.webp" srcset="assets/images/photos/menu-care-800.webp 800w, assets/images/photos/menu-care-1024.webp 1024w" sizes="(min-width: 1024px) 270px, (min-width: 768px) 44vw, 74vw" width="1024" height="1536" alt="石のカウンターに並ぶ、ラベルのないガラスのボトルと陶器の容器、水を張った淡いブルーの皿" loading="lazy" decoding="async">
+            </figure>
+            <div class="menu-card__body">
+              <p class="menu-card__en" lang="en">Hair care</p>
+              <h3 class="menu-card__title">ヘアケア</h3>
+              <p>髪の内側に水分と栄養を届けるトリートメント。ご自宅でのお手入れ方法もお伝えします。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 04 シグネチャー・ヘッドスパ -->
+    <section class="signature" id="signature" aria-labelledby="signature-title">
+      <figure class="signature__media media">
+        <img src="assets/images/photos/signature-spa-1536.webp" srcset="assets/images/photos/signature-spa-800.webp 800w, assets/images/photos/signature-spa-1200.webp 1200w, assets/images/photos/signature-spa-1536.webp 1536w" sizes="100vw" width="1536" height="1024" alt="白い陶器のシャンプーボウルで、セラピストの手がお湯に広がる髪をやさしく支えている。壁には水と光の模様が映っている" loading="lazy" decoding="async">
+      </figure>
+      <div class="signature__inner container">
+        <div class="signature__text">
+          <p class="eyebrow" lang="en">Signature head spa</p>
+          <h2 class="section-title" id="signature-title"><span class="nowrap">水と光に、</span><span class="nowrap">ほどけていく時間。</span></h2>
+          <p>温かなお湯の音と、ゆっくりとしたリズムの指先。頭皮のこわばりをほどきながら、髪の根元から整えていく、Lueurのシグネチャーメニューです。</p>
+          <p class="signature__note">シグネチャーヘッドスパ｜60分（サンプル）</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 料金表 -->
+    <section class="section price" id="price" aria-labelledby="price-title">
+      <div class="container container--narrow">
+        <div class="section-head">
+          <p class="eyebrow" lang="en">Price</p>
+          <h2 class="section-title" id="price-title">料金</h2>
+          <p class="price__notice">掲載の料金はデザインサンプル用の架空の価格です。実在の店舗の料金ではありません。</p>
+        </div>
+        <div class="price__groups">
+          <div class="price__group">
+            <h3 class="price__heading">カット・カラー</h3>
+            <dl class="price-list">
+              <div class="price-list__row"><dt>カット</dt><dd>5,500円</dd></div>
+              <div class="price-list__row"><dt>カット＋カラー</dt><dd>12,100円</dd></div>
+              <div class="price-list__row"><dt>リタッチカラー（根元のみ）</dt><dd>7,700円</dd></div>
+            </dl>
+          </div>
+          <div class="price__group">
+            <h3 class="price__heading">ヘッドスパ・ケア</h3>
+            <dl class="price-list">
+              <div class="price-list__row"><dt>ヘッドスパ 30分</dt><dd>4,400円</dd></div>
+              <div class="price-list__row"><dt>シグネチャーヘッドスパ 60分</dt><dd>8,800円</dd></div>
+              <div class="price-list__row"><dt>トリートメント</dt><dd>3,300円</dd></div>
+            </dl>
+          </div>
+        </div>
+        <p class="price__foot">※ 価格はすべて税込の表記例です（サンプル）。</p>
+      </div>
+    </section>
+
+    <!-- 06 施術の流れ -->
+    <section class="section flow" id="flow" aria-labelledby="flow-title">
+      <div class="container flow__grid">
+        <figure class="flow__photo media">
+          <img src="assets/images/photos/flow-counseling-1200.webp" srcset="assets/images/photos/flow-counseling-800.webp 800w, assets/images/photos/flow-counseling-1200.webp 1200w, assets/images/photos/flow-counseling-1536.webp 1536w" sizes="(min-width: 1024px) 46vw, 92vw" width="1536" height="1024" alt="窓辺の丸い木のテーブルに、ハーブティーのガラスカップ2つとリネン表紙のノートが置かれたカウンセリング席" loading="lazy" decoding="async">
+        </figure>
+        <div class="flow__text">
+          <div class="section-head section-head--left">
+            <p class="eyebrow" lang="en">Flow</p>
+            <h2 class="section-title" id="flow-title">施術の流れ</h2>
+          </div>
+          <ol class="steps">
+            <li class="step">
+              <span class="step__num" lang="en" aria-hidden="true">01</span>
+              <div>
+                <h3 class="step__title">カウンセリング</h3>
+                <p>ハーブティーを飲みながら、髪の悩みやなりたい雰囲気をゆっくり伺います。</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__num" lang="en" aria-hidden="true">02</span>
+              <div>
+                <h3 class="step__title">メニューのご確認</h3>
+                <p>髪と頭皮の状態を見ながら、施術の内容と料金をご説明します。</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__num" lang="en" aria-hidden="true">03</span>
+              <div>
+                <h3 class="step__title">施術</h3>
+                <p>自然光の入る席で、カット・カラー・ヘッドスパなどを行います。</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__num" lang="en" aria-hidden="true">04</span>
+              <div>
+                <h3 class="step__title">仕上がりの確認</h3>
+                <p>仕上がりを一緒に確かめ、ご自宅での乾かし方やお手入れをお伝えします。</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 ギャラリー -->
+    <section class="section gallery" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" lang="en">Gallery</p>
+          <h2 class="section-title" id="gallery-title">スタイル</h2>
+          <p class="section-lead">光に透ける、やわらかな質感を大切にしたスタイルのイメージです。</p>
+        </div>
+        <div class="gallery__grid">
+          <figure class="gallery__item gallery__item--tall">
+            <div class="media">
+              <img src="assets/images/photos/gallery-01-1024.webp" srcset="assets/images/photos/gallery-01-800.webp 800w, assets/images/photos/gallery-01-1024.webp 1024w" sizes="(min-width: 1024px) 40vw, (min-width: 768px) 46vw, 92vw" width="1024" height="1536" alt="首のラインで切りそろえた、ツヤのあるダークブラウンのボブの後ろ姿" loading="lazy" decoding="async">
+            </div>
+            <figcaption>ツヤのある、内巻きのボブ</figcaption>
+          </figure>
+          <figure class="gallery__item gallery__item--wide">
+            <div class="media">
+              <img src="assets/images/photos/gallery-02-1200.webp" srcset="assets/images/photos/gallery-02-800.webp 800w, assets/images/photos/gallery-02-1200.webp 1200w, assets/images/photos/gallery-02-1536.webp 1536w" sizes="(min-width: 1024px) 50vw, (min-width: 768px) 46vw, 92vw" width="1536" height="1024" alt="窓辺に座る女性の、胸までの長さのベージュブラウンのゆるいウェーブヘア" loading="lazy" decoding="async">
+            </div>
+            <figcaption>光に透ける、ゆるやかなウェーブ</figcaption>
+          </figure>
+          <figure class="gallery__item gallery__item--square">
+            <div class="media">
+              <img src="assets/images/photos/gallery-03-800.webp" srcset="assets/images/photos/gallery-03-800.webp 800w, assets/images/photos/gallery-03-1200.webp 1200w" sizes="(min-width: 1024px) 24vw, (min-width: 768px) 46vw, 92vw" width="1254" height="1254" alt="首の後ろで低くまとめた、後れ毛のあるやわらかなシニヨン。真珠のヘアピンがさしてある" loading="lazy" decoding="async">
+            </div>
+            <figcaption>後れ毛を残した、低めのまとめ髪</figcaption>
+          </figure>
+        </div>
+        <p class="note">※ 掲載写真はAI生成画像によるイメージです。</p>
+      </div>
+    </section>
+
+    <!-- 08 よくある質問 -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container container--narrow">
+        <div class="section-head">
+          <p class="eyebrow" lang="en">FAQ</p>
+          <h2 class="section-title" id="faq-title">よくある質問</h2>
+          <p class="section-lead">回答は、サロンサイトの構成例としてのサンプルです。</p>
+        </div>
+        <div class="faq__list">
+          <details class="faq-item">
+            <summary class="faq-item__q">予約はどこからできますか？</summary>
+            <div class="faq-item__a">
+              <p>このページはポートフォリオ用のサンプルサイトのため、実際のご予約はできません。実在のサロンのサイトでは、ここに予約方法をご案内します。</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">初めてでも、髪の悩みを相談できますか？</summary>
+            <div class="faq-item__a">
+              <p>はい。施術の前に、ハーブティーを飲みながらのカウンセリングの時間を設けています。言葉にしにくい悩みも、写真などを見ながら一緒に整理します。</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">ヘッドスパだけの利用もできますか？</summary>
+            <div class="faq-item__a">
+              <p>はい。30分のヘッドスパと、60分のシグネチャーヘッドスパをご用意しています（サンプル）。</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">施術の時間はどのくらいかかりますか？</summary>
+            <div class="faq-item__a">
+              <p>カットは約60分、カット＋カラーは約120分が目安です（サンプル）。髪の長さや状態によって変わります。</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-item__q">肌や頭皮が敏感でも大丈夫ですか？</summary>
+            <div class="faq-item__a">
+              <p>カウンセリングで頭皮の状態を確認し、刺激の少ない薬剤や施術の方法をご提案します。気になることがあれば、施術の前にお知らせください。</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 アクセス・店舗情報 -->
+    <section class="section access" id="access" aria-labelledby="access-title">
+      <div class="container access__grid">
+        <figure class="access__photo media">
+          <img src="assets/images/photos/access-entrance-800.webp" srcset="assets/images/photos/access-entrance-800.webp 800w, assets/images/photos/access-entrance-1024.webp 1024w" sizes="(min-width: 1024px) 36vw, (min-width: 768px) 40vw, 92vw" width="1024" height="1536" alt="白い漆喰の壁に、ガラス窓の付いたオーク材の扉。横にはオリーブの木の鉢植えが置かれている" loading="lazy" decoding="async">
+        </figure>
+        <div class="access__text">
+          <div class="section-head section-head--left">
+            <p class="eyebrow" lang="en">Access</p>
+            <h2 class="section-title" id="access-title">店舗情報</h2>
+          </div>
+          <dl class="info-list">
+            <div class="info-list__row"><dt>店名</dt><dd>Lueur hair &amp; head spa（架空の店舗）</dd></div>
+            <div class="info-list__row"><dt>所在地</dt><dd>サンプルサイトのため掲載していません</dd></div>
+            <div class="info-list__row"><dt>営業時間</dt><dd>10:00〜19:00（サンプル）</dd></div>
+            <div class="info-list__row"><dt>定休日</dt><dd>火曜日（サンプル）</dd></div>
+            <div class="info-list__row"><dt>席数</dt><dd>セット面 2席・ヘッドスパ個室 1室（サンプル）</dd></div>
+          </dl>
+          <p class="note">Lueurは架空の店舗のため、住所・電話番号・地図は掲載していません。実在する同名店舗とは関係ありません。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 最後の予約案内 -->
+    <section class="cta" id="reserve" aria-labelledby="cta-title" data-hide-bar>
+      <div class="cta__media media" aria-hidden="true">
+        <img src="assets/images/photos/cta-light-1200.webp" srcset="assets/images/photos/cta-light-800.webp 800w, assets/images/photos/cta-light-1200.webp 1200w, assets/images/photos/cta-light-1536.webp 1536w" sizes="100vw" width="1536" height="1024" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="cta__inner container">
+        <div class="cta__card glass">
+          <p class="eyebrow" lang="en">Reservation</p>
+          <h2 class="section-title" id="cta-title"><span class="nowrap">光の中で、</span><span class="nowrap">髪と心を</span><span class="nowrap">ととのえる時間を。</span></h2>
+          <a class="btn btn--reserve" href="#reserve-info" data-reserve>ご予約について</a>
+          <p class="cta__info" id="reserve-info">こちらはポートフォリオ用のサンプルサイトです。実際のご予約はできません。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-hide-bar>
+    <div class="container site-footer__inner">
+      <p class="logo logo--footer">
+        <span class="logo__name" lang="fr">Lueur</span>
+        <span class="logo__sub" lang="en">hair &amp; head spa</span>
+      </p>
+      <p class="site-footer__sample">本ページはNook Designのポートフォリオ用サンプルです。Lueurは架空の店舗であり、実在する同名店舗とは関係ありません。掲載写真はAI生成画像です。</p>
+      <p class="site-footer__copy"><small><span class="nowrap">Design sample by Nook Design</span>　<span class="nowrap">© 2026 Nook Design</span></small></p>
+    </div>
+  </footer>
+
+  <!-- スマホ用の固定予約バー（ファーストビューを過ぎると表示） -->
+  <div class="reserve-bar" data-reserve-bar>
+    <a class="btn btn--reserve btn--bar" href="#reserve-info" data-reserve>ご予約について</a>
+  </div>
+
+  <!-- 予約ボタンを押したときの説明（JavaScript が動くときだけ使う） -->
+  <dialog class="dialog" id="reserve-dialog" aria-labelledby="reserve-dialog-title" aria-describedby="reserve-dialog-text">
+    <div class="dialog__body">
+      <p class="eyebrow" lang="en">Reservation</p>
+      <h2 class="dialog__title" id="reserve-dialog-title">ご予約について</h2>
+      <p id="reserve-dialog-text">こちらはポートフォリオ用のサンプルサイトです。実際のご予約はできません。</p>
+      <p class="dialog__sub">Lueurは架空の店舗であり、実在する同名店舗とは関係ありません。</p>
+      <button class="btn btn--reserve dialog__close" type="button" data-dialog-close>閉じる</button>
+    </div>
+  </dialog>
+</body>
+</html>

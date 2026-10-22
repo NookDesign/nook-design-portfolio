@@ -1,0 +1,587 @@
+/* ==========================================================
+   Lueur hair & head spa｜スタイルシート
+   ----------------------------------------------------------
+   1. デザインの基本値（色・文字・余白）
+   2. リセットと基本
+   3. 共通パーツ（文字・ボタン・写真・ガラス）
+   4. サンプル表記・ヘッダー
+   5. ファーストビュー
+   6. コンセプト
+   7. メニュー
+   8. シグネチャー
+   9. 料金
+  10. 施術の流れ
+  11. ギャラリー
+  12. よくある質問
+  13. 店舗情報
+  14. 最後の予約案内・フッター
+  15. 固定予約バー・予約のダイアログ
+  16. 動き（スクロール表示・動きを減らす設定）
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   1. デザインの基本値
+   ---------------------------------------------------------- */
+:root {
+  /* 色 */
+  --c-milk: #f7f5f1;        /* 背景（ミルキーホワイト） */
+  --c-blue: #dce7ee;        /* 淡いブルー */
+  --c-blue-soft: #eef3f6;
+  --c-sand: #e8dccb;        /* サンドベージュ */
+  --c-sand-soft: #f1ebe1;
+  --c-bluegray: #8a9ba8;    /* ブルーグレー（線・飾り専用。文字には使わない） */
+  --c-button: #5b7385;      /* 予約ボタン（白文字とのコントラスト 4.96） */
+  --c-button-hover: #4a6274;
+  --c-ink: #2f3a42;         /* 本文 */
+  --c-ink-2: #4f5e6a;       /* 補助の文字（淡い色の背景すべてでコントラスト 4.9 以上） */
+  --c-accent: #4a6274;      /* 英字の小見出し */
+  --c-line: rgba(47, 58, 66, 0.14);
+  --c-glass: rgba(247, 245, 241, 0.7);
+
+  /* 文字 */
+  --ff-mincho: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --ff-gothic: "Zen Kaku Gothic New", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  --ff-en: "Cormorant Garamond", "Times New Roman", serif;
+  --fs-hero: clamp(1.5rem, 1.1rem + 2.6vw, 3rem);
+  --fs-title: clamp(1.5rem, 1.15rem + 1.5vw, 2.25rem);
+  --fs-h3: clamp(1.125rem, 1.05rem + 0.3vw, 1.3rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  /* 余白 */
+  --gutter: clamp(16px, 5vw, 64px);
+  --section: clamp(80px, 10vw, 144px);
+  --max: 1200px;
+  --header-h: 64px;
+  --bar-h: 68px;
+  --radius: 6px;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@media (min-width: 1024px) {
+  :root { --header-h: 76px; }
+}
+
+/* ----------------------------------------------------------
+   2. リセットと基本
+   ---------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-padding-top: calc(var(--header-h) + 16px); -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--c-milk);
+  color: var(--c-ink);
+  font-family: var(--ff-gothic);
+  font-size: var(--fs-body);
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p, figure, dl, dd, ol, ul { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+button { font: inherit; }
+
+:focus-visible { outline: 3px solid var(--c-ink); outline-offset: 3px; }
+.site-footer :focus-visible { outline-color: var(--c-blue); }
+
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  padding: 8px 16px;
+  background: var(--c-ink);
+  color: var(--c-milk);
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+.skip-link:focus { transform: none; }
+
+.container { width: 100%; max-width: calc(var(--max) + var(--gutter) * 2); margin-inline: auto; padding-inline: var(--gutter); }
+.container--narrow { max-width: calc(880px + var(--gutter) * 2); }
+.nowrap { display: inline-block; }
+
+/* ----------------------------------------------------------
+   3. 共通パーツ
+   ---------------------------------------------------------- */
+/* overflow: clip は、施術の流れの写真を画面に固定（sticky）するため。古い端末では hidden になる */
+.section { position: relative; padding-block: var(--section); overflow: hidden; overflow: clip; }
+
+.eyebrow {
+  margin-bottom: 10px;
+  color: var(--c-accent);
+  font-family: var(--ff-en);
+  font-size: 1.0625rem;
+  font-style: italic;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+}
+.section-title {
+  font-family: var(--ff-mincho);
+  font-size: var(--fs-title);
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+}
+.section-head { position: relative; margin-bottom: clamp(32px, 5vw, 56px); text-align: center; }
+.section-head--left { text-align: left; }
+.section-lead { max-width: 34em; margin: 16px auto 0; color: var(--c-ink-2); }
+.note { margin-top: 24px; color: var(--c-ink-2); font-size: var(--fs-small); }
+
+/* ボタン */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 32px;
+  border: 0;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+  touch-action: manipulation;
+}
+.btn--reserve { background: var(--c-button); color: #fff; box-shadow: 0 8px 24px -12px rgba(47, 58, 66, 0.5); }
+.btn--reserve:hover { background: var(--c-button-hover); }
+.btn--small { min-height: 44px; padding: 0 18px; font-size: var(--fs-small); letter-spacing: 0.06em; }
+
+/* 写真の枠（読み込めないときも、淡い色の面で形を保つ） */
+.media { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--c-sand-soft), var(--c-blue-soft)); }
+.media img { width: 100%; height: 100%; object-fit: cover; }
+
+/* すりガラスの面（使えない端末では、半透明の白で代わりに表示） */
+.glass {
+  background: rgba(247, 245, 241, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 48px -32px rgba(47, 58, 66, 0.45);
+}
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .glass {
+    background: var(--c-glass);
+    -webkit-backdrop-filter: blur(16px) saturate(1.1);
+    backdrop-filter: blur(16px) saturate(1.1);
+  }
+}
+
+/* ----------------------------------------------------------
+   4. サンプル表記・ヘッダー
+   ---------------------------------------------------------- */
+.sample-bar {
+  position: relative;
+  z-index: 60;
+  padding: 8px var(--gutter);
+  background: var(--c-ink);
+  color: var(--c-milk);
+  font-size: var(--fs-small);
+  line-height: 1.7;
+  text-align: center;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-h);
+  transition: background-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.site-header.is-scrolled {
+  background: rgba(247, 245, 241, 0.94);
+  box-shadow: 0 1px 0 var(--c-line);
+}
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .site-header.is-scrolled {
+    background: rgba(247, 245, 241, 0.72);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+  }
+}
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 100%;
+  max-width: calc(var(--max) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.logo { display: inline-flex; flex-direction: column; line-height: 1; text-decoration: none; }
+.logo__name { font-family: var(--ff-en); font-size: 1.75rem; font-weight: 500; letter-spacing: 0.06em; }
+.logo__sub { margin-top: 4px; font-family: var(--ff-en); font-size: 0.8125rem; font-style: italic; letter-spacing: 0.14em; }
+
+.site-nav { display: none; }
+@media (min-width: 1024px) {
+  .site-nav { display: block; margin-left: auto; }
+  .site-nav ul { display: flex; gap: clamp(16px, 2.2vw, 32px); }
+  .site-nav a { position: relative; padding: 8px 0; font-family: var(--ff-en); font-size: 1.0625rem; letter-spacing: 0.1em; text-decoration: none; }
+  .site-nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 4px; height: 1px; background: currentColor; transform: scaleX(0); transition: transform 0.3s var(--ease); }
+  .site-nav a:hover::after { transform: scaleX(1); }
+  .site-header .btn--small { margin-left: 16px; }
+}
+
+/* ----------------------------------------------------------
+   5. ファーストビュー
+   ---------------------------------------------------------- */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin-top: calc(var(--header-h) * -1);
+  padding: calc(var(--header-h) + 24px) 0 clamp(24px, 6vh, 72px);
+  overflow: hidden;
+}
+.hero__media { position: absolute; inset: 0; display: block; background: linear-gradient(135deg, var(--c-sand-soft), var(--c-blue)); }
+.hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 88% 40%; }
+/* 写真の下側を少し明るくして、カードとのつながりをやわらかくする */
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(247, 245, 241, 0) 55%, rgba(247, 245, 241, 0.35) 100%); pointer-events: none; }
+.hero__inner { position: relative; z-index: 1; width: 100%; max-width: calc(var(--max) + var(--gutter) * 2); margin-inline: auto; padding-inline: var(--gutter); }
+.hero__card { max-width: 540px; padding: clamp(24px, 4vw, 44px); }
+.hero__title { font-family: var(--ff-mincho); font-size: var(--fs-hero); font-weight: 500; line-height: 1.55; letter-spacing: 0.08em; }
+.hero__lead { margin: 16px 0 24px; }
+
+@media (min-aspect-ratio: 1/1) {
+  .hero__media img { object-position: 70% 40%; }
+  .hero::after { background: linear-gradient(90deg, rgba(247, 245, 241, 0.3) 0%, rgba(247, 245, 241, 0) 45%); }
+}
+
+/* ----------------------------------------------------------
+   6. コンセプト
+   ---------------------------------------------------------- */
+.concept { background: linear-gradient(180deg, var(--c-milk) 0%, var(--c-sand-soft) 100%); }
+.concept::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -15%;
+  width: 70vw;
+  max-width: 760px;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 65%);
+  pointer-events: none;
+}
+.concept__grid { position: relative; display: grid; gap: 48px; }
+.concept__photos { position: relative; padding-bottom: 22%; }
+.concept__photo--main { width: 74%; aspect-ratio: 4 / 5; border-radius: var(--radius); }
+.concept__photo--sub {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 48%;
+  aspect-ratio: 1;
+  border: 6px solid var(--c-milk);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 40px -28px rgba(47, 58, 66, 0.5);
+}
+.concept__text .section-title { margin-bottom: 24px; }
+.concept__text p + p { margin-top: 1em; }
+
+@media (min-width: 768px) {
+  .concept__grid { grid-template-columns: 1.05fr 0.95fr; align-items: center; gap: clamp(40px, 6vw, 96px); }
+  .concept__text { padding-top: 12%; }
+}
+
+/* ----------------------------------------------------------
+   7. メニュー
+   ---------------------------------------------------------- */
+.menu { background: linear-gradient(180deg, var(--c-sand-soft) 0%, var(--c-blue-soft) 22%, var(--c-blue) 100%); }
+.deco-wave { position: absolute; top: 0; left: 0; width: 100%; height: clamp(120px, 16vw, 220px); fill: none; stroke: rgba(91, 115, 133, 0.22); stroke-width: 1; pointer-events: none; }
+.deco-wave path { vector-effect: non-scaling-stroke; }
+.menu .container { position: relative; }
+.swipe-hint { margin: -16px 0 16px; color: var(--c-ink-2); font-size: var(--fs-small); text-align: right; }
+.swipe-hint::after { content: " →"; }
+
+.menu__scroller {
+  position: relative;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gutter);
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+.menu__scroller::-webkit-scrollbar { display: none; }
+.menu__scroller:focus-visible { outline-offset: -3px; }
+.menu__list { display: flex; gap: 16px; width: max-content; padding: 4px var(--gutter) 24px; }
+.menu-card {
+  flex: 0 0 auto;
+  width: min(74vw, 320px);
+  scroll-snap-align: start;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius);
+}
+.menu-card__photo { aspect-ratio: 4 / 5; }
+.menu-card__body { padding: 20px 20px 24px; }
+.menu-card__en { color: var(--c-accent); font-family: var(--ff-en); font-size: 1rem; font-style: italic; letter-spacing: 0.12em; }
+.menu-card__title { margin: 2px 0 8px; font-family: var(--ff-mincho); font-size: var(--fs-h3); font-weight: 500; letter-spacing: 0.08em; }
+.menu-card__body p:last-child { color: var(--c-ink-2); }
+
+@media (min-width: 768px) {
+  .swipe-hint { display: none; }
+  .menu__scroller { overflow: visible; }
+  .menu__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 100%;
+    max-width: calc(var(--max) + var(--gutter) * 2);
+    margin-inline: auto;
+    padding-bottom: 0;
+  }
+  .menu-card { width: auto; }
+}
+@media (min-width: 1024px) {
+  .menu__list { grid-template-columns: repeat(4, 1fr); }
+  .menu-card:nth-child(even) { margin-top: 48px; }
+}
+
+/* ----------------------------------------------------------
+   8. シグネチャー
+   ---------------------------------------------------------- */
+.signature { position: relative; background: linear-gradient(180deg, var(--c-blue) 0%, var(--c-milk) 100%); }
+.signature__media { aspect-ratio: 4 / 5; }
+.signature__media img { object-position: 82% 50%; }
+.signature__inner { position: relative; padding-block: 40px 64px; }
+.signature__text .section-title { margin-bottom: 20px; }
+.signature__note { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--c-line); color: var(--c-ink-2); font-size: var(--fs-small); }
+
+@media (min-width: 768px) {
+  .signature { display: flex; align-items: center; min-height: clamp(560px, 84vh, 820px); background: var(--c-milk); }
+  .signature__media { position: absolute; inset: 0; aspect-ratio: auto; }
+  .signature__media img { object-position: 70% 50%; }
+  /* 左側の明るい壁の上に文字を置く。文字の後ろだけ少し明るくして読みやすくする */
+  .signature__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(247, 245, 241, 0.78) 0%, rgba(247, 245, 241, 0.5) 34%, rgba(247, 245, 241, 0) 58%); }
+  .signature__inner { padding-block: var(--section); }
+  .signature__text { max-width: 420px; }
+}
+
+/* ----------------------------------------------------------
+   9. 料金
+   ---------------------------------------------------------- */
+.price { background: var(--c-milk); }
+.price__notice {
+  max-width: 34em;
+  margin: 20px auto 0;
+  padding: 12px 16px;
+  background: var(--c-blue-soft);
+  border-left: 3px solid var(--c-button);
+  text-align: left;
+}
+.price__groups { display: grid; gap: 40px; }
+.price__heading { margin-bottom: 8px; padding-bottom: 12px; border-bottom: 1px solid var(--c-ink); font-family: var(--ff-mincho); font-size: var(--fs-h3); font-weight: 500; letter-spacing: 0.08em; }
+.price-list__row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--c-line);
+}
+.price-list__row dt { grid-column: 1; grid-row: 1; }
+.price-list__row dd { grid-column: 3; grid-row: 1; padding-left: 4px; font-weight: 500; font-variant-numeric: tabular-nums; white-space: nowrap; }
+/* メニュー名と料金を点線でつなぐ */
+.price-list__row::after { content: ""; grid-column: 2; grid-row: 1; align-self: center; min-width: 16px; margin: 0 12px; border-bottom: 1px dotted var(--c-bluegray); }
+.price__foot { margin-top: 24px; color: var(--c-ink-2); font-size: var(--fs-small); }
+
+@media (min-width: 768px) {
+  .price__groups { grid-template-columns: 1fr 1fr; gap: 48px; }
+}
+
+/* ----------------------------------------------------------
+   10. 施術の流れ
+   ---------------------------------------------------------- */
+.flow { background: var(--c-sand-soft); }
+.flow::before {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  left: -12%;
+  width: 60vw;
+  max-width: 640px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220, 231, 238, 0.7) 0%, rgba(220, 231, 238, 0) 68%);
+  pointer-events: none;
+}
+.flow__grid { position: relative; display: grid; gap: 40px; }
+.flow__photo { aspect-ratio: 3 / 2; border-radius: var(--radius); }
+.steps { counter-reset: step; }
+.step { display: grid; grid-template-columns: 3.25rem 1fr; gap: 12px; padding: 20px 0; border-top: 1px solid var(--c-line); }
+.step:last-child { border-bottom: 1px solid var(--c-line); }
+.step__num { color: var(--c-accent); font-family: var(--ff-en); font-size: 1.75rem; line-height: 1.2; }
+.step__title { margin-bottom: 4px; font-family: var(--ff-mincho); font-size: var(--fs-h3); font-weight: 500; letter-spacing: 0.08em; }
+.step p { color: var(--c-ink-2); }
+
+@media (min-width: 1024px) {
+  .flow__grid { grid-template-columns: 1fr 1fr; align-items: start; gap: clamp(48px, 6vw, 96px); }
+  .flow__photo { position: sticky; top: calc(var(--header-h) + 32px); aspect-ratio: 4 / 5; }
+}
+
+/* ----------------------------------------------------------
+   11. ギャラリー
+   ---------------------------------------------------------- */
+.gallery { background: linear-gradient(180deg, var(--c-milk) 0%, var(--c-blue-soft) 100%); }
+.gallery__grid { display: grid; gap: 32px; }
+.gallery__item .media { border-radius: var(--radius); }
+.gallery__item figcaption { margin-top: 10px; color: var(--c-ink-2); font-size: var(--fs-small); }
+.gallery__item--tall .media { aspect-ratio: 4 / 5; }
+.gallery__item--wide .media { aspect-ratio: 3 / 2; }
+.gallery__item--square .media { aspect-ratio: 1; }
+
+@media (min-width: 768px) {
+  .gallery__grid { grid-template-columns: 5fr 6fr; grid-template-rows: auto auto; column-gap: clamp(24px, 4vw, 64px); row-gap: 40px; }
+  .gallery__item--tall { grid-column: 1; grid-row: 1 / span 2; }
+  .gallery__item--tall .media { aspect-ratio: 2 / 3; }
+  .gallery__item--wide { grid-column: 2; grid-row: 1; margin-top: 48px; }
+  .gallery__item--square { grid-column: 2; grid-row: 2; width: 64%; }
+}
+
+/* ----------------------------------------------------------
+   12. よくある質問
+   ---------------------------------------------------------- */
+.faq { background: var(--c-blue-soft); }
+.faq::before {
+  content: "";
+  position: absolute;
+  top: -12%;
+  right: -10%;
+  width: 56vw;
+  max-width: 600px;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 65%);
+  pointer-events: none;
+}
+.faq__list { position: relative; border-top: 1px solid var(--c-line); }
+.faq-item { border-bottom: 1px solid var(--c-line); }
+.faq-item__q {
+  position: relative;
+  padding: 20px 48px 20px 2.25em;
+  font-weight: 500;
+  line-height: 1.7;
+  list-style: none;
+  cursor: pointer;
+}
+.faq-item__q::-webkit-details-marker { display: none; }
+.faq-item__q::before { content: "Q"; position: absolute; left: 0; top: 16px; color: var(--c-accent); font-family: var(--ff-en); font-size: 1.375rem; }
+/* 開閉の印（＋ → −） */
+.faq-item__q::after {
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  background:
+    linear-gradient(var(--c-ink), var(--c-ink)) center / 16px 1.5px no-repeat,
+    linear-gradient(var(--c-ink), var(--c-ink)) center / 1.5px 16px no-repeat;
+  transition: transform 0.3s var(--ease);
+}
+.faq-item[open] .faq-item__q::after { background: linear-gradient(var(--c-ink), var(--c-ink)) center / 16px 1.5px no-repeat; }
+.faq-item__q:hover { color: var(--c-accent); }
+.faq-item__a { padding: 0 8px 24px 2.25em; color: var(--c-ink-2); }
+
+/* ----------------------------------------------------------
+   13. 店舗情報
+   ---------------------------------------------------------- */
+.access { background: linear-gradient(180deg, var(--c-milk) 0%, #e9eef1 100%); }
+.access__grid { display: grid; gap: 40px; }
+.access__photo { aspect-ratio: 4 / 5; border-radius: var(--radius); }
+.info-list { border-top: 1px solid var(--c-line); }
+.info-list__row { display: grid; grid-template-columns: 5.5em 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--c-line); }
+.info-list__row dt { color: var(--c-ink-2); }
+
+@media (min-width: 768px) {
+  .access__grid { grid-template-columns: 0.8fr 1fr; align-items: center; gap: clamp(40px, 6vw, 96px); }
+}
+
+/* ----------------------------------------------------------
+   14. 最後の予約案内・フッター
+   ---------------------------------------------------------- */
+.cta { position: relative; display: flex; align-items: center; min-height: clamp(520px, 80vh, 720px); padding-block: var(--section); overflow: hidden; }
+.cta__media { position: absolute; inset: 0; }
+.cta__media::after { content: ""; position: absolute; inset: 0; background: rgba(247, 245, 241, 0.3); }
+.cta__inner { position: relative; }
+.cta__card { max-width: 640px; margin-inline: auto; padding: clamp(32px, 6vw, 56px) clamp(20px, 5vw, 56px); text-align: center; }
+.cta__card .section-title { margin-bottom: 28px; }
+.cta__info { margin-top: 20px; color: var(--c-ink-2); }
+
+.site-footer { padding: 56px 0 40px; background: var(--c-ink); color: var(--c-milk); }
+.site-footer__inner { display: grid; gap: 20px; }
+.logo--footer { color: var(--c-milk); }
+.site-footer__sample { max-width: 44em; color: #c9d3da; font-size: var(--fs-small); }
+.site-footer__copy { color: #c9d3da; font-family: var(--ff-en); font-size: 0.9375rem; letter-spacing: 0.08em; }
+.site-footer__copy small { font-size: inherit; }
+
+/* スマホでは固定予約バーの高さ分、ページの最後に余白をとる */
+@media (max-width: 767px) {
+  .site-footer { padding-bottom: calc(40px + var(--bar-h) + env(safe-area-inset-bottom)); }
+}
+
+/* ----------------------------------------------------------
+   15. 固定予約バー・予約のダイアログ
+   ---------------------------------------------------------- */
+.reserve-bar { display: none; }
+@media (max-width: 767px) {
+  .reserve-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    display: block;
+    padding: 8px 16px calc(8px + env(safe-area-inset-bottom));
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+    background: rgba(247, 245, 241, 0.95);
+    border-top: 1px solid var(--c-line);
+    visibility: hidden;
+    transform: translateY(110%);
+    transition: transform 0.35s var(--ease), visibility 0s linear 0.35s;
+  }
+  .reserve-bar.is-visible { visibility: visible; transform: none; transition: transform 0.35s var(--ease), visibility 0s; }
+  @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+    .reserve-bar { background: rgba(247, 245, 241, 0.78); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+  }
+}
+.btn--bar { width: 100%; min-height: 52px; }
+
+.dialog {
+  width: min(92vw, 440px);
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: var(--c-milk);
+  color: var(--c-ink);
+  box-shadow: 0 32px 64px -24px rgba(47, 58, 66, 0.5);
+}
+.dialog::backdrop { background: rgba(47, 58, 66, 0.45); }
+.dialog__body { padding: 32px 28px 28px; text-align: center; }
+.dialog__title { margin-bottom: 16px; font-family: var(--ff-mincho); font-size: 1.375rem; font-weight: 500; letter-spacing: 0.08em; }
+.dialog__sub { margin-top: 12px; color: var(--c-ink-2); font-size: var(--fs-small); }
+.dialog__close { margin-top: 24px; min-width: 160px; }
+
+/* ----------------------------------------------------------
+   16. 動き
+   ---------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  .js .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+  .js .reveal.is-in { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
