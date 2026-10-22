@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="ja" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NOVA AI デモ｜AI文章作成SaaS プロトタイプ（Nook Design 制作実績）</title>
+<meta name="description" content="Nook Design が制作した、AI文章作成SaaS「NOVA AI」の画面デザインのプロトタイプです。架空のサービスで、AI には接続していません。">
+<!-- 架空のサービスのプロトタイプなので、検索エンジンに載らないようにしています -->
+<meta name="robots" content="noindex, nofollow">
+<!-- ポートフォリオ掲載用のデモ：AI に問い合わせず、サンプル文章だけを表示する -->
+<meta name="nova-mode" content="demo">
+<meta name="theme-color" content="#070b1a">
+<!-- SNSで共有したときに表示される情報（OGP）
+     公開先のURLが決まったら、og:url と og:image（https:// から始まる画像のURL）を追加します -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="NOVA AI デモ｜AI文章作成SaaS プロトタイプ（Nook Design 制作実績）">
+<meta property="og:description" content="Nook Design が UI/UX 設計・フロントエンド実装を担当した、AI文章作成SaaSのプロトタイプ（架空のサービス）です。">
+<meta property="og:url" content="https://nookdesign.github.io/nook-design-portfolio/nova-ai/demo/">
+<meta property="og:image" content="https://nookdesign.github.io/nook-design-portfolio/nova-ai/images/cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="900">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<!-- JavaScript が動く環境だけ、開閉やアニメーションを有効にする目印 -->
+<script>document.documentElement.classList.replace("no-js", "js");</script>
+</head>
+<body>
+
+<!-- アイコン（このページの中だけで使う図形。外部ファイルを読み込まないので表示が崩れません） -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></symbol>
+  <symbol id="i-notes" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M8 8h8M8 12h8M8 16h5"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 13h6M9 17h4"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M7 12h10"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M12 3v9M8 5v8M16 6v7M4 11c0 6 3 10 8 10s8-3 8-9"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.3 7.5 9.5 4.3-1.2 7.5-4.9 7.5-9.5V6z"/><path d="m8.5 12 2.5 2.5 4.5-4.5"/></symbol>
+  <symbol id="i-team" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.6 2.7-6 6-6s6 2.4 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16.5 14.2c2.6.3 4.5 2.4 4.5 5.3"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="8" cy="8" r="1.5"/></symbol>
+  <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h8"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.3-4.5L4 8.5M4 4v4.5h4.5M4 13a8 8 0 0 0 14.3 4.5l1.7-2M20 20v-4.5h-4.5"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3c.7 4.8 3.2 7.3 8 8-4.8.7-7.3 3.2-8 8-.7-4.8-3.2-7.3-8-8 4.8-.7 7.3-3.2 8-8z"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">本文へ移動</a>
+
+<!-- プロトタイプであることの表示（全員に必ず見えるよう、ページの一番上に置きます） -->
+<div class="demo-bar" role="note">
+  <p>このページは、Nook Design が制作した<strong>SaaS のプロトタイプ（架空のサービス）</strong>です。AI には接続しておらず、文章の作成・申し込みはできません。<a href="../">制作の詳細を見る</a></p>
+</div>
+
+<header class="header" data-header>
+  <div class="header__inner">
+    <a class="logo" href="#top" aria-label="NOVA AI ページの先頭へ">
+      <svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6c2.3 15.6 9.4 22.7 26 26-16.6 3.3-23.7 10.4-26 26-2.3-15.6-9.4-22.7-26-26 16.6-3.3 23.7-10.4 26-26z"/></svg>
+      <span class="logo__text">NOVA<span> AI</span></span>
+    </a>
+
+    <nav class="nav" id="site-nav" aria-label="ページ内メニュー" data-nav>
+      <ul class="nav__list">
+        <li><a href="#problem">課題</a></li>
+        <li><a href="#studio">AIで作成</a></li>
+        <li><a href="#features">機能</a></li>
+        <li><a href="#benefits">導入メリット</a></li>
+        <li><a href="#pricing">料金</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+      </ul>
+      <a class="btn btn--primary btn--sm nav__cta" href="#studio">画面を試す</a>
+    </nav>
+
+    <button class="menu-btn" type="button" aria-controls="site-nav" aria-expanded="false" data-menu-btn>
+      <span class="menu-btn__bars" aria-hidden="true"></span>
+      <span class="visually-hidden" data-menu-label>メニューを開く</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===== 2. ヒーロー ===== -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <p class="badge"><svg class="icon"><use href="#i-spark"/></svg>個人事業主・小さなお店のための AI 文章アシスタント</p>
+        <h1 class="hero__title" id="hero-title">
+          <span>複雑な業務を、</span><span>AIでもっと</span><span class="grad-text">シンプルに。</span>
+        </h1>
+        <p class="hero__lead">SNS の投稿文、商品の紹介文、営業メール、ランディングページの構成。毎日の「書く手間」を NOVA AI が下書きで引き受けます。あなたは確認して整えるだけ。お客さまとの時間に集中できます。</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="#studio">
+            作成画面を試す<svg class="icon"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="btn btn--ghost btn--lg" href="#features">機能を見る</a>
+        </div>
+        <ul class="hero__points">
+          <li><svg class="icon"><use href="#i-check"/></svg>会員登録なしで試せる</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>専門知識は不要</li>
+          <li><svg class="icon"><use href="#i-check"/></svg>文章は自由に編集できる</li>
+        </ul>
+        <p class="hero__note">※架空のサービスのプロトタイプです。画面のイメージには、構想段階の機能も含まれています。</p>
+      </div>
+
+      <!-- 製品画面のイメージ（HTML と CSS で描いた図。画像ではありません） -->
+      <figure class="hero__visual">
+        <div class="app" role="img" aria-label="NOVA AI のホーム画面のイメージ。AIが今日の予定と、対応が必要な問い合わせをまとめて表示している様子">
+          <div class="app__bar" aria-hidden="true">
+            <span class="app__dots"><i></i><i></i><i></i></span>
+            <span class="app__url">NOVA AI ― ホーム</span>
+          </div>
+          <div class="app__body" aria-hidden="true">
+            <div class="app__side">
+              <span class="app__side-logo"></span>
+              <span class="is-on"><svg class="icon"><use href="#i-spark"/></svg></span>
+              <span><svg class="icon"><use href="#i-mail"/></svg></span>
+              <span><svg class="icon"><use href="#i-notes"/></svg></span>
+              <span><svg class="icon"><use href="#i-doc"/></svg></span>
+            </div>
+            <div class="app__main">
+              <p class="app__hello">おはようございます。今日のまとめです。</p>
+              <div class="app__summary">
+                <p class="app__summary-title"><svg class="icon"><use href="#i-spark"/></svg>AI サマリー</p>
+                <ul>
+                  <li><b>返信が必要な問い合わせ</b><span>3件・返信案を作成済み</span></li>
+                  <li><b>今日の会議</b><span>2件・資料を準備済み</span></li>
+                  <li><b>期限が近いタスク</b><span>1件・明日 17:00</span></li>
+                </ul>
+              </div>
+              <div class="app__list">
+                <div class="app__row"><span class="tag tag--blue">見積依頼</span><span class="app__row-text">新しい見積もりのご相談</span><span class="app__chip">返信案あり</span></div>
+                <div class="app__row"><span class="tag tag--cyan">日程調整</span><span class="app__row-text">打ち合わせ日程の変更について</span><span class="app__chip">返信案あり</span></div>
+                <div class="app__row"><span class="tag tag--violet">請求</span><span class="app__row-text">今月分の請求書の送付依頼</span><span class="app__chip app__chip--muted">書類を作成中</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="float-card" aria-hidden="true">
+          <span class="float-card__icon"><svg class="icon"><use href="#i-check"/></svg></span>
+          <span><b>議事録を作成しました</b><small>ToDo 4件をチームに共有</small></span>
+        </div>
+        <figcaption class="visually-hidden">製品画面のイメージ（開発中の機能を含みます）</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== 3. 課題提起 ===== -->
+  <section class="section" id="problem" aria-labelledby="problem-title">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Problem</p>
+        <h2 class="section-title" id="problem-title">その仕事、本当に<br><span class="phrase">人の手で</span><span class="phrase">やる必要が</span><span class="phrase">ありますか？</span></h2>
+        <p class="section-lead">少人数のチームほど、ひとりが抱える「本業以外の作業」は増えていきます。どれも大切な仕事ですが、毎回ゼロから手作業で進める必要はありません。</p>
+      </div>
+
+      <ul class="problem-grid">
+        <li class="problem-card" data-reveal>
+          <span class="problem-card__icon"><svg class="icon"><use href="#i-mail"/></svg></span>
+          <h3>問い合わせの仕分けと返信</h3>
+          <p>メール、フォーム、チャット。届く場所がばらばらで、気づいたら返信が遅れている。</p>
+        </li>
+        <li class="problem-card" data-reveal>
+          <span class="problem-card__icon"><svg class="icon"><use href="#i-notes"/></svg></span>
+          <h3>会議のあとの議事録づくり</h3>
+          <p>話した内容をまとめるのに、会議と同じくらいの時間がかかってしまう。</p>
+        </li>
+        <li class="problem-card" data-reveal>
+          <span class="problem-card__icon"><svg class="icon"><use href="#i-doc"/></svg></span>
+          <h3>見積書・報告書の作成</h3>
+          <p>毎回、前回のファイルをコピーして書きかえる。数字の転記ミスも心配。</p>
+        </li>
+        <li class="problem-card" data-reveal>
+          <span class="problem-card__icon"><svg class="icon"><use href="#i-folder"/></svg></span>
+          <h3>情報があちこちに散らばる</h3>
+          <p>「あの資料どこ？」が口ぐせに。担当者が休むと、仕事が止まってしまう。</p>
+        </li>
+      </ul>
+
+      <p class="problem-bridge" data-reveal>NOVA AI は、こうした<strong>くり返しの業務</strong>を引き受ける、<br class="br-pc">チームのための AI アシスタントです。</p>
+    </div>
+  </section>
+
+  <!-- ===== AI 文章作成（いま使える機能） ===== -->
+  <!-- 動きは assets/js/studio.js。AI の呼び出しはサーバー（src/）が行い、このページに APIキーは含みません -->
+  <section class="section section--alt studio" id="studio" aria-labelledby="studio-title">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">AI Writer</p>
+        <h2 class="section-title" id="studio-title">AIで、文章の下書きをつくる</h2>
+        <p class="section-lead">種類を選んで、商品・サービスのことを入力するだけ。SNS 投稿文、紹介文、メール、ランディングページの文章を AI が下書きします。</p>
+      </div>
+
+      <noscript><p class="notice notice--warning studio__noscript">AI 文章作成を使うには、ブラウザの JavaScript を有効にしてください。</p></noscript>
+
+      <div class="studio__layout">
+        <!-- ===== 左（スマホでは上）：条件の入力 ===== -->
+        <form class="panel studio__form" data-studio-form novalidate aria-labelledby="form-title" aria-describedby="studio-privacy">
+          <div class="panel__head">
+            <h3 class="panel__title" id="form-title">条件を入力</h3>
+            <!-- AI の接続状態（短い表示） -->
+            <p class="ai-status" data-ai-status data-state="checking" role="status">
+              <span class="ai-status__dot" aria-hidden="true"></span>
+              <span data-ai-status-text>確認中…</span>
+            </p>
+          </div>
+
+          <!-- AI がすぐ使えないときの説明（準備中・模擬AI・上限など） -->
+          <div class="notice" data-ai-notice hidden>
+            <svg class="notice__icon icon" aria-hidden="true"><use href="#i-spark"/></svg>
+            <div class="notice__body">
+              <p class="notice__title" data-ai-notice-title></p>
+              <p class="notice__text" data-ai-notice-text></p>
+              <div class="ai-setup" data-ai-setup hidden></div>
+            </div>
+          </div>
+
+          <!-- 1. 文章の種類 -->
+          <fieldset class="step">
+            <legend class="step__legend"><span class="step__num" aria-hidden="true">1</span>文章の種類</legend>
+            <div class="type-grid">
+              <label class="type-card">
+                <input type="radio" name="type" value="sns" checked>
+                <span class="type-card__body">
+                  <span class="type-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg></span>
+                  <span class="type-card__text">
+                    <span class="type-card__title">SNS投稿文</span>
+                    <span class="type-card__desc">Instagram などの投稿</span>
+                  </span>
+                  <span class="type-card__check" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+                </span>
+              </label>
+              <label class="type-card">
+                <input type="radio" name="type" value="product">
+                <span class="type-card__body">
+                  <span class="type-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg></span>
+                  <span class="type-card__text">
+                    <span class="type-card__title">商品・サービス紹介</span>
+                    <span class="type-card__desc">ホームページやチラシに</span>
+                  </span>
+                  <span class="type-card__check" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+                </span>
+              </label>
+              <label class="type-card">
+                <input type="radio" name="type" value="email">
+                <span class="type-card__body">
+                  <span class="type-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+                  <span class="type-card__text">
+                    <span class="type-card__title">営業メール・返信</span>
+                    <span class="type-card__desc">新規の案内・問い合わせ対応</span>
+                  </span>
+                  <span class="type-card__check" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+                </span>
+              </label>
+              <label class="type-card">
+                <input type="radio" name="type" value="lp">
+                <span class="type-card__body">
+                  <span class="type-card__icon"><svg class="icon" aria-hidden="true"><use href="#i-layout"/></svg></span>
+                  <span class="type-card__text">
+                    <span class="type-card__title">LPの構成・コピー</span>
+                    <span class="type-card__desc">ランディングページの設計</span>
+                  </span>
+                  <span class="type-card__check" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- 2. 内容 -->
+          <fieldset class="step">
+            <legend class="step__legend"><span class="step__num" aria-hidden="true">2</span>伝えたい内容</legend>
+            <button type="button" class="link-btn step__aside" data-fill-example>
+              <svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>入力例を入れる
+            </button>
+
+            <div class="field">
+              <div class="field__top">
+                <label class="field__label" for="f-productName">商品・サービス名<em>必須</em></label>
+                <span class="field__count" data-count-for="f-productName" aria-hidden="true">0 / 60</span>
+              </div>
+              <input class="field__input" id="f-productName" name="productName" type="text" maxlength="60" required autocomplete="off" enterkeyhint="next" placeholder="例：秋限定 和栗のモンブランタルト" aria-describedby="e-productName">
+              <p class="field__error" id="e-productName" data-error-for="productName"></p>
+            </div>
+
+            <div class="field">
+              <div class="field__top">
+                <label class="field__label" for="f-details"><span data-details-label>特徴・伝えたいこと</span><em>必須</em></label>
+                <span class="field__count" data-count-for="f-details" aria-hidden="true">0 / 1000</span>
+              </div>
+              <textarea class="field__input field__textarea" id="f-details" name="details" rows="5" maxlength="1000" required placeholder="例：10月末までの期間限定。甘さ控えめ。テイクアウトもできます。" aria-describedby="h-details e-details"></textarea>
+              <p class="field__hint" id="h-details" data-details-hint>価格・期間・おすすめの点など、文章に入れたい事実を10文字以上で。書いていない数字や実績は、AI が作らないようにしています。</p>
+              <p class="field__error" id="e-details" data-error-for="details"></p>
+            </div>
+
+            <div class="field">
+              <div class="field__top">
+                <label class="field__label" for="f-audience">だれに向けた文章か<em class="is-optional">任意</em></label>
+                <span class="field__count" data-count-for="f-audience" aria-hidden="true">0 / 100</span>
+              </div>
+              <input class="field__input" id="f-audience" name="audience" type="text" maxlength="100" autocomplete="off" enterkeyhint="done" placeholder="例：近所に住む30〜40代の方" aria-describedby="e-audience">
+              <p class="field__error" id="e-audience" data-error-for="audience"></p>
+            </div>
+          </fieldset>
+
+          <!-- 3. 仕上がり（押して選ぶボタン。選択肢は種類に合わせて studio.js が入れかえる） -->
+          <fieldset class="step">
+            <legend class="step__legend"><span class="step__num" aria-hidden="true">3</span>仕上がり</legend>
+
+            <div class="chip-field" role="radiogroup" aria-labelledby="l-tone">
+              <p class="field__label" id="l-tone">トーン</p>
+              <div class="chips" data-chips="tone">
+                <label class="chip"><input type="radio" name="tone" value="friendly" checked><span>親しみやすい</span></label>
+                <label class="chip"><input type="radio" name="tone" value="polite"><span>丁寧・誠実</span></label>
+                <label class="chip"><input type="radio" name="tone" value="elegant"><span>上品・落ち着いた</span></label>
+                <label class="chip"><input type="radio" name="tone" value="casual"><span>元気・カジュアル</span></label>
+                <label class="chip"><input type="radio" name="tone" value="professional"><span>専門的・信頼感</span></label>
+              </div>
+            </div>
+
+            <div class="chip-field" role="radiogroup" aria-labelledby="l-length">
+              <p class="field__label" id="l-length">文字数</p>
+              <div class="chips" data-chips="length"></div>
+            </div>
+
+            <div class="chip-field" role="radiogroup" aria-labelledby="l-format">
+              <p class="field__label" id="l-format">出力形式</p>
+              <div class="chips" data-chips="format"></div>
+            </div>
+          </fieldset>
+
+          <!-- 作るボタン（スマホでは画面の下に固定） -->
+          <div class="actionbar">
+            <button type="submit" class="btn btn--primary btn--lg actionbar__submit" data-generate>
+              <span class="spinner" aria-hidden="true"></span>
+              <svg class="icon actionbar__icon" aria-hidden="true"><use href="#i-spark"/></svg>
+              <span data-generate-label>AIで文章を作る</span>
+            </button>
+            <p class="actionbar__meta" data-actionbar-meta aria-hidden="true"></p>
+          </div>
+          <p class="studio__privacy" id="studio-privacy">このページはプロトタイプのため、入力した内容はどこにも送信・保存されません。</p>
+        </form>
+
+        <!-- ===== 右（スマホでは下）：作成結果 ===== -->
+        <section class="panel result" data-result data-state="empty" aria-labelledby="result-title" tabindex="-1">
+          <div class="panel__head">
+            <h3 class="panel__title" id="result-title">作成結果</h3>
+            <span class="result__badge" data-result-badge hidden></span>
+          </div>
+
+          <!-- 状態の表示（未作成・作成中・エラー・お知らせ）。中身は studio.js が切りかえる -->
+          <div class="state" data-state-box data-tone="neutral">
+            <span class="state__icon" aria-hidden="true">
+              <svg class="icon" data-state-icon><use href="#i-spark"/></svg>
+              <span class="spinner spinner--lg"></span>
+            </span>
+            <p class="state__title" data-state-title></p>
+            <p class="state__text" data-state-text></p>
+            <div class="state__skeleton" aria-hidden="true">
+              <span class="line"></span><span class="line"></span><span class="line line--mid"></span><span class="line line--short"></span>
+            </div>
+            <div class="state__actions" data-state-actions></div>
+          </div>
+
+          <!-- 作成した文章 -->
+          <div class="result__body" data-result-body hidden>
+            <div class="result__toolbar">
+              <p class="result__summary" data-result-summary></p>
+              <div class="result__tools">
+                <button type="button" class="tool-btn tool-btn--primary" data-copy><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg><span data-copy-label>コピー</span></button>
+                <button type="button" class="tool-btn" data-regenerate><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg><span>もう一度作る</span></button>
+                <button type="button" class="tool-btn" data-edit-conditions><svg class="icon" aria-hidden="true"><use href="#i-notes"/></svg><span>条件を変える</span></button>
+              </div>
+            </div>
+            <p class="result__label" data-result-label></p>
+            <label class="visually-hidden" for="result-text">作成された文章（自由に編集できます）</label>
+            <textarea class="result__text" id="result-text" data-result-text rows="10" spellcheck="false"></textarea>
+            <div class="result__meta">
+              <span data-result-count>0文字</span>
+              <span data-result-remaining></span>
+            </div>
+            <p class="result__caution">AI の文章には、誤りや不自然な表現が含まれることがあります。公開・送信の前に、内容（とくに数字・日付・事実）を必ず確認してください。［ ］の部分は書き足してください。</p>
+          </div>
+          <p class="visually-hidden" aria-live="polite" data-live></p>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. 主要機能（これから提供する予定の機能） ===== -->
+  <section class="section" id="features" aria-labelledby="features-title">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Roadmap</p>
+        <h2 class="section-title" id="features-title">これから広げていく、3つの機能</h2>
+        <p class="section-lead">いま使えるのは、上の「AI 文章作成」です。このあと、毎日の業務をさらに軽くする次の機能を開発する予定です。</p>
+        <p class="roadmap-note"><svg class="icon"><use href="#i-clock"/></svg>以下は開発予定の機能です。まだ使えません（提供時期は未定）。</p>
+      </div>
+
+      <div class="features">
+        <!-- 機能 01 -->
+        <article class="feature" data-reveal>
+          <div class="feature__text">
+            <p class="feature__num">01<span>AI Inbox</span><em class="soon">開発予定</em></p>
+            <h3 class="feature__title">問い合わせを、AIが仕分けて<br class="br-pc">返信の下書きまで。</h3>
+            <p>メールやフォームから届いた問い合わせを、AI が内容ごとに自動で分類。急ぎのものを上に並べ、過去のやりとりをふまえた返信の下書きを用意します。あなたは確認して送るだけです。</p>
+            <ul class="check-list">
+              <li><svg class="icon"><use href="#i-check"/></svg>「見積依頼」「日程調整」など内容ごとに自動分類</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>会社の言葉づかいに合わせた返信の下書き</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>送信前に必ず人が確認できる設計</li>
+            </ul>
+          </div>
+          <div class="feature__visual" aria-hidden="true">
+            <div class="mock mock--inbox">
+              <div class="mock__head"><svg class="icon"><use href="#i-mail"/></svg>受信トレイ<span class="mock__pill">自動で分類中</span></div>
+              <div class="mock__mail is-active">
+                <span class="tag tag--blue">見積依頼</span>
+                <p><b>新しい見積もりのご相談</b><small>優先度：高・本日中</small></p>
+              </div>
+              <div class="mock__reply">
+                <p class="mock__reply-label"><svg class="icon"><use href="#i-spark"/></svg>AIの返信案</p>
+                <span class="line"></span><span class="line"></span><span class="line line--short"></span>
+                <div class="mock__reply-actions"><span class="mini-btn">編集する</span><span class="mini-btn mini-btn--primary">確認して送信</span></div>
+              </div>
+              <div class="mock__mail"><span class="tag tag--cyan">日程調整</span><p><b>打ち合わせ日程の変更</b><small>優先度：中</small></p></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 機能 02 -->
+        <article class="feature feature--reverse" data-reveal>
+          <div class="feature__text">
+            <p class="feature__num">02<span>Meeting Notes</span><em class="soon">開発予定</em></p>
+            <h3 class="feature__title">会議が終わるころには、<br class="br-pc">議事録とToDoがそろっている。</h3>
+            <p>オンライン会議の録音や手書きのメモから、要点・決定事項・次にやることを自動で整理。担当者と期限をつけて、チームのタスクとして共有できます。</p>
+            <ul class="check-list">
+              <li><svg class="icon"><use href="#i-check"/></svg>要点・決定事項・ToDo を3つに分けて要約</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>担当者と期限を AI が提案</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>過去の会議内容もキーワードで検索</li>
+            </ul>
+          </div>
+          <div class="feature__visual" aria-hidden="true">
+            <div class="mock mock--notes">
+              <div class="mock__head"><svg class="icon"><use href="#i-notes"/></svg>定例ミーティング<span class="mock__pill mock__pill--ok">要約完了</span></div>
+              <p class="mock__label">決定事項</p>
+              <span class="line"></span><span class="line line--mid"></span>
+              <p class="mock__label">ToDo</p>
+              <div class="mock__todo"><span class="box is-done"><svg class="icon"><use href="#i-check"/></svg></span><span class="line"></span><span class="avatar">A</span></div>
+              <div class="mock__todo"><span class="box"></span><span class="line line--mid"></span><span class="avatar avatar--2">K</span></div>
+              <div class="mock__todo"><span class="box"></span><span class="line line--short"></span><span class="avatar avatar--3">M</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 機能 03 -->
+        <article class="feature" data-reveal>
+          <div class="feature__text">
+            <p class="feature__num">03<span>Smart Docs</span><em class="soon">開発予定</em></p>
+            <h3 class="feature__title">見積書も報告書も、<br class="br-pc">ひとことで下書き完成。</h3>
+            <p>「先週の打ち合わせ内容で見積書を作って」と頼むだけ。登録したテンプレートと過去の書類をもとに、書類の下書きを作成します。金額や日付は元データから読み取るので、転記ミスも防げます。</p>
+            <ul class="check-list">
+              <li><svg class="icon"><use href="#i-check"/></svg>自社のテンプレートをそのまま登録</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>会話の内容から書類の下書きを作成</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>PDF にしてそのまま共有</li>
+            </ul>
+          </div>
+          <div class="feature__visual" aria-hidden="true">
+            <div class="mock mock--docs">
+              <div class="mock__prompt"><svg class="icon"><use href="#i-spark"/></svg>先週の打ち合わせ内容で見積書を作って</div>
+              <div class="mock__paper">
+                <p class="mock__paper-title">御見積書<small>下書き</small></p>
+                <div class="mock__paper-row"><span class="line"></span><span class="num"></span></div>
+                <div class="mock__paper-row"><span class="line line--mid"></span><span class="num"></span></div>
+                <div class="mock__paper-row"><span class="line line--short"></span><span class="num"></span></div>
+                <div class="mock__paper-total"><span>合計</span><span class="num num--lg"></span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. 導入メリット・利用イメージ ===== -->
+  <section class="section section--alt" id="benefits" aria-labelledby="benefits-title">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Benefits</p>
+        <h2 class="section-title" id="benefits-title">NOVA AI で変わること</h2>
+        <p class="section-lead">新しいツールを覚える負担より、手が空くことのほうが大きい。そう感じてもらえるように設計しています。<br><small class="section-note">※開発予定の機能を含む、目指している姿です。</small></p>
+      </div>
+
+      <ul class="benefit-grid">
+        <li class="benefit" data-reveal>
+          <span class="benefit__icon"><svg class="icon"><use href="#i-hand"/></svg></span>
+          <h3>定型作業から、手を離せる</h3>
+          <p>仕分け・まとめ・下書きを AI に任せることで、人は「確認して決める」ことに集中できます。</p>
+        </li>
+        <li class="benefit" data-reveal>
+          <span class="benefit__icon"><svg class="icon"><use href="#i-shield"/></svg></span>
+          <h3>対応の抜け漏れを防げる</h3>
+          <p>返信待ちの問い合わせや期限の近いタスクを、毎朝のサマリーでお知らせ。見落としに気づけます。</p>
+        </li>
+        <li class="benefit" data-reveal>
+          <span class="benefit__icon"><svg class="icon"><use href="#i-team"/></svg></span>
+          <h3>チームの知識が、一か所にたまる</h3>
+          <p>やりとりや議事録が自動で整理されるので、担当者が不在でも、ほかのメンバーが引き継げます。</p>
+        </li>
+      </ul>
+
+      <div class="usecase" data-reveal>
+        <div class="usecase__head">
+          <p class="eyebrow">Use case</p>
+          <h3 class="usecase__title">利用イメージ：<br class="br-sp">5人のデザイン事務所の一日</h3>
+          <p class="usecase__note">※ NOVA AI の使い方を説明するための想定シナリオです（開発予定の機能を含みます）。実際の導入事例ではありません。</p>
+        </div>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <time class="timeline__time">9:00</time>
+            <div>
+              <h4>朝のサマリーで、今日の優先順位がわかる</h4>
+              <p>夜のうちに届いた問い合わせを AI が分類。返信が必要な3件には、下書きが用意されています。</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <time class="timeline__time">11:00</time>
+            <div>
+              <h4>定例会議は、話すことだけに集中</h4>
+              <p>会議が終わると議事録が完成。決まったことと担当者が、チームに自動で共有されます。</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <time class="timeline__time">14:00</time>
+            <div>
+              <h4>見積書は、会話の内容から下書き</h4>
+              <p>打ち合わせの記録をもとに、AI が見積書の下書きを作成。担当者は金額を確認するだけです。</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <time class="timeline__time">17:30</time>
+            <div>
+              <h4>日報も、ワンクリックでまとまる</h4>
+              <p>今日の対応や進んだタスクを AI が一覧に。明日の準備を整えて、気持ちよく一日を終えられます。</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. 料金プラン ===== -->
+  <section class="section" id="pricing" aria-labelledby="pricing-title">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Pricing</p>
+        <h2 class="section-title" id="pricing-title">チームの規模に合わせた、<br>わかりやすい料金</h2>
+        <p class="section-lead">料金プランの画面デザインです。申し込み・支払いの機能はありません。</p>
+      </div>
+
+      <p class="price-disclaimer" data-reveal>
+        <strong>表示している料金は、デザイン用の仮の設定です。</strong>実在するサービスの料金ではなく、申し込み・お支払いはできません。
+      </p>
+
+      <!-- 月払い・年払いの切りかえ（JavaScript が動かない環境では、月払いの料金だけ表示されます） -->
+      <div class="billing" data-reveal>
+        <span class="billing__label" id="billing-label">お支払い方法</span>
+        <div class="billing__switch" role="group" aria-labelledby="billing-label">
+          <button type="button" class="billing__btn is-active" aria-pressed="true" data-billing="monthly">月払い</button>
+          <button type="button" class="billing__btn" aria-pressed="false" data-billing="yearly">年払い<span class="billing__save">約2か月分お得</span></button>
+        </div>
+      </div>
+
+      <div class="plans">
+        <article class="plan" data-reveal>
+          <h3 class="plan__name">フリー</h3>
+          <p class="plan__desc">まずは個人で試してみたい方に</p>
+          <p class="plan__price"><span class="plan__yen">¥</span><span class="plan__amount">0</span><span class="plan__unit">/ 月</span></p>
+          <p class="plan__sub">プロトタイプ（架空の設定）</p>
+          <a class="btn btn--primary btn--block" href="#studio">作成画面を見る</a>
+          <ul class="plan__list">
+            <li><svg class="icon"><use href="#i-check"/></svg>AI 文章作成（4種類）1日の回数限定</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>ユーザー 1名</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>AI インボックス 月100件まで（開発予定）</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>ミーティングノート 月3回まで（開発予定）</li>
+          </ul>
+        </article>
+
+        <article class="plan plan--featured" data-reveal>
+          <p class="plan__badge">準備中</p>
+          <h3 class="plan__name">スタンダード</h3>
+          <p class="plan__desc">少人数のチームで使いたい方に</p>
+          <p class="plan__price">
+            <span class="plan__yen">¥</span><span class="plan__amount" data-monthly="2,980" data-yearly="2,480">2,980</span><span class="plan__unit">/ ユーザー・月</span>
+          </p>
+          <p class="plan__sub" data-monthly="予定価格・月払い（税込）" data-yearly="予定価格・年額 29,760円（税込）">予定価格・月払い（税込）</p>
+          <button type="button" class="btn btn--soon btn--block" data-demo-cta="スタンダードプラン">準備中（購入できません）</button>
+          <ul class="plan__list">
+            <li><svg class="icon"><use href="#i-check"/></svg>ユーザー 最大20名</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>AI インボックス・ミーティングノート 無制限</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>ドキュメント自動作成</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>チームの共有ワークスペース</li>
+          </ul>
+        </article>
+
+        <article class="plan" data-reveal>
+          <h3 class="plan__name">ビジネス</h3>
+          <p class="plan__desc">管理機能やサポートを重視する方に</p>
+          <p class="plan__price">
+            <span class="plan__yen">¥</span><span class="plan__amount" data-monthly="4,980" data-yearly="4,150">4,980</span><span class="plan__unit">/ ユーザー・月</span>
+          </p>
+          <p class="plan__sub" data-monthly="予定価格・月払い（税込）" data-yearly="予定価格・年額 49,800円（税込）">予定価格・月払い（税込）</p>
+          <button type="button" class="btn btn--soon btn--block" data-demo-cta="ビジネスプラン">準備中（購入できません）</button>
+          <ul class="plan__list">
+            <li><svg class="icon"><use href="#i-check"/></svg>ユーザー数 制限なし</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>スタンダードのすべての機能</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>権限管理・操作ログ</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>チャットでの優先サポート</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- プランの機能比較表 -->
+      <div class="compare" data-reveal>
+        <h3 class="compare__title">プランごとの機能比較</h3>
+
+        <!-- スマートフォンでは、表の列を1プランずつ切りかえて表示します -->
+        <div class="compare__tabs" role="group" aria-label="比較するプランを選ぶ">
+          <button type="button" class="compare__tab" aria-pressed="false" data-compare="free">フリー</button>
+          <button type="button" class="compare__tab is-active" aria-pressed="true" data-compare="standard">スタンダード</button>
+          <button type="button" class="compare__tab" aria-pressed="false" data-compare="business">ビジネス</button>
+        </div>
+
+        <div class="compare__scroll">
+          <table class="compare__table" data-compare-table data-active="standard">
+            <caption class="visually-hidden">フリー・スタンダード・ビジネスの各プランで使える機能の比較</caption>
+            <thead>
+              <tr>
+                <th scope="col">機能</th>
+                <th scope="col" data-col="free">フリー</th>
+                <th scope="col" data-col="standard" class="is-featured">スタンダード</th>
+                <th scope="col" data-col="business">ビジネス</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">AI 文章作成（4種類）</th>
+                <td data-col="free">1日の回数限定</td>
+                <td data-col="standard" class="is-featured">予定</td>
+                <td data-col="business">予定</td>
+              </tr>
+              <tr>
+                <th scope="row">ユーザー数</th>
+                <td data-col="free">1名</td>
+                <td data-col="standard" class="is-featured">最大20名</td>
+                <td data-col="business">制限なし</td>
+              </tr>
+              <tr>
+                <th scope="row">AI インボックス（自動分類）</th>
+                <td data-col="free">月100件</td>
+                <td data-col="standard" class="is-featured">無制限</td>
+                <td data-col="business">無制限</td>
+              </tr>
+              <tr>
+                <th scope="row">返信の下書き作成</th>
+                <td data-col="free"><svg class="icon icon--yes"><use href="#i-check"/></svg><span class="visually-hidden">対応</span></td>
+                <td data-col="standard" class="is-featured"><svg class="icon icon--yes"><use href="#i-check"/></svg><span class="visually-hidden">対応</span></td>
+                <td data-col="business"><svg class="icon icon--yes"><use href="#i-check"/></svg><span class="visually-hidden">対応</span></td>
+              </tr>
+              <tr>
+                <th scope="row">ミーティングノート</th>
+                <td data-col="free">月3回</td>
+                <td data-col="standard" class="is-featured">無制限</td>
+                <td data-col="business">無制限</td>
+              </tr>
+              <tr>
+                <th scope="row">ドキュメント自動作成</th>
+                <td data-col="free"><svg class="icon icon--no"><use href="#i-minus"/></svg><span class="visually-hidden">非対応</span></td>
+                <td data-col="standard" class="is-featured"><svg class="icon icon--yes"><use href="#i-check"/></svg><span class="visually-hidden">対応</span></td>
+                <td data-col="business"><svg class="icon icon--yes"><use href="#i-check"/></svg><span class="visually-hidden">対応</span></td>
+              </tr>
+              <tr>
+                <th scope="row">独自テンプレートの登録</th>
+                <td data-col="free"><svg class="icon icon--no"><use href="#i-minus"/></svg><span class="visually-hidden">非対応</span></td>
+                <td data-col="standard" class="is-featured">10件まで</td>
+                <td data-col="business">無制限</td>
+              </tr>
+              <tr>
+                <th scope="row">チームの共有ワークスペース</th>
+                <td data-col="free"><svg class="icon icon--no"><use href="#i-minus"/></svg><span class="visually-hidden">非対応</span></td>
+                <td data-col="standard" class="is-featured"><svg class="icon icon--yes"><use href="#i-check"/></svg><span class="visually-hidden">対応</span></td>
+                <td data-col="business"><svg class="icon icon--yes"><use href="#i-check"/></svg><span class="visually-hidden">対応</span></td>
+              </tr>
+              <tr>
+                <th scope="row">権限管理・操作ログ</th>
+                <td data-col="free"><svg class="icon icon--no"><use href="#i-minus"/></svg><span class="visually-hidden">非対応</span></td>
+                <td data-col="standard" class="is-featured"><svg class="icon icon--no"><use href="#i-minus"/></svg><span class="visually-hidden">非対応</span></td>
+                <td data-col="business"><svg class="icon icon--yes"><use href="#i-check"/></svg><span class="visually-hidden">対応</span></td>
+              </tr>
+              <tr>
+                <th scope="row">サポート</th>
+                <td data-col="free">ヘルプページ</td>
+                <td data-col="standard" class="is-featured">メール</td>
+                <td data-col="business">メール・チャット（優先対応）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="compare__note">※「AI 文章作成」以外の機能と、有料プランは開発予定です。内容は変更になる場合があります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. よくある質問 ===== -->
+  <section class="section section--alt" id="faq" aria-labelledby="faq-title">
+    <div class="container container--narrow">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">FAQ</p>
+        <h2 class="section-title" id="faq-title">よくある質問</h2>
+        <p class="section-lead">サービスとして提供する場合を想定した、質問と回答の設計例です（このページはプロトタイプです）。</p>
+      </div>
+
+      <!-- 質問を押すと回答が開きます。JavaScript が動かない環境では、すべての回答が最初から表示されます -->
+      <div class="faq" data-faq>
+        <div class="faq__item" data-reveal>
+          <h3 class="faq__q">
+            <button type="button" class="faq__btn" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+              <span>専門知識がなくても使えますか？</span><span class="faq__mark" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1">
+            <div class="faq__a-inner"><p>はい。文章の種類を選び、商品・サービス名と伝えたいことを入力して、ボタンを押すだけです。会員登録や AI の知識は必要ありません。スマートフォンからも使えます。</p></div>
+          </div>
+        </div>
+        <div class="faq__item" data-reveal>
+          <h3 class="faq__q">
+            <button type="button" class="faq__btn" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+              <span>どんな文章を作れますか？</span><span class="faq__mark" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq__a" id="faq-a2" role="region" aria-labelledby="faq-q2">
+            <div class="faq__a-inner"><p>いま作れるのは、① Instagram などの SNS 投稿文、② 商品・サービスの紹介文、③ 営業メール・問い合わせへの返信文、④ ランディングページの構成とコピー の4種類です。トーン・文字数・出力形式も選べます。</p></div>
+          </div>
+        </div>
+        <div class="faq__item" data-reveal>
+          <h3 class="faq__q">
+            <button type="button" class="faq__btn" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+              <span>AI が作った文章は、そのまま使えますか？</span><span class="faq__mark" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3">
+            <div class="faq__a-inner"><p>下書きとしてお使いください。AI の文章には、誤りや不自然な表現が含まれることがあります。入力していない情報は［価格］のような空欄で出すようにしていますが、公開・送信の前に、内容（とくに数字・日付・事実）を必ずご確認ください。</p></div>
+          </div>
+        </div>
+        <div class="faq__item" data-reveal>
+          <h3 class="faq__q">
+            <button type="button" class="faq__btn" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+              <span>入力した内容は保存されますか？</span><span class="faq__mark" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4">
+            <div class="faq__a-inner"><p>NOVA AI のサーバーには、入力内容と作成された文章を保存しません。文章を作るために、入力内容は AI サービス（Anthropic 社の Claude）へ送信され、同社の規約に沿って取り扱われます。お客さまの氏名・連絡先などの個人情報や、社外秘の情報は入力しないでください。</p></div>
+          </div>
+        </div>
+        <div class="faq__item" data-reveal>
+          <h3 class="faq__q">
+            <button type="button" class="faq__btn" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+              <span>無料で何回まで使えますか？</span><span class="faq__mark" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq__a" id="faq-a5" role="region" aria-labelledby="faq-q5">
+            <div class="faq__a-inner"><p>1日に作れる回数に上限を設ける設計です（あと何回使えるかは、作成画面の上に表示します）。上限に達した日は、翌日（日本時間の0時）からまた使える想定です。</p></div>
+          </div>
+        </div>
+        <div class="faq__item" data-reveal>
+          <h3 class="faq__q">
+            <button type="button" class="faq__btn" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
+              <span>有料プランはいつから使えますか？</span><span class="faq__mark" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6">
+            <div class="faq__a-inner"><p>有料プランは構想段階です。このプロトタイプには、申し込み・支払いの機能はありません。料金表の金額はデザイン用の仮の設定です。</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8. 最終CTA ===== -->
+  <section class="cta" id="cta" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta__box" data-reveal>
+        <div class="cta__glow" aria-hidden="true"></div>
+        <p class="eyebrow">Get started</p>
+        <h2 class="cta__title" id="cta-title">まずは無料で、<br class="br-sp">文章を1本つくってみませんか。</h2>
+        <p class="cta__lead">会員登録もクレジットカードも不要です。<br class="br-pc">いつもの「書く手間」が、どれくらい軽くなるか試してみてください。</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary btn--lg" href="#studio">AIで文章を作る<svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--ghost btn--lg" href="#pricing">料金プランを見る</a>
+        </div>
+        <ol class="steps">
+          <li><span>1</span>文章の種類を選ぶ</li>
+          <li><span>2</span>商品と伝えたいことを入力</li>
+          <li><span>3</span>AI が下書きを作成</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== 9. フッター ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="logo" href="#top" aria-label="NOVA AI ページの先頭へ">
+          <svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6c2.3 15.6 9.4 22.7 26 26-16.6 3.3-23.7 10.4-26 26-2.3-15.6-9.4-22.7-26-26 16.6-3.3 23.7-10.4 26-26z"/></svg>
+          <span class="logo__text">NOVA<span> AI</span></span>
+        </a>
+        <p>複雑な業務を、AIでもっとシンプルに。</p>
+      </div>
+      <nav class="footer__nav" aria-label="フッターメニュー">
+        <ul>
+          <li><a href="#problem">課題</a></li>
+          <li><a href="#studio">AIで作成</a></li>
+          <li><a href="#features">機能</a></li>
+          <li><a href="#benefits">導入メリット</a></li>
+          <li><a href="#pricing">料金</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer__notice">
+      <p>NOVA AI は、Nook Design が UI/UX 設計とフロントエンド実装の制作実績として作った<strong>SaaS のプロトタイプ（架空のサービス）</strong>です。このページは AI に接続しておらず、文章の作成・申し込みはできません。掲載している機能・料金・回答は設計上の設定です。実在する同名・類似名のサービスや企業とは関係ありません。</p>
+    </div>
+    <p class="footer__credit"><span>Design &amp; Coding : <a href="https://nookdesign.github.io/" target="_blank" rel="noopener">Nook Design</a></span><span>© 2026 Nook Design</span></p>
+  </div>
+</footer>
+
+<!-- 有料プランのボタンを押したときに出る案内（プロトタイプのため、申し込みはできません） -->
+<dialog class="modal" id="demo-dialog" aria-labelledby="demo-dialog-title" aria-describedby="demo-dialog-desc">
+  <div class="modal__inner">
+    <span class="modal__icon" aria-hidden="true"><svg class="icon"><use href="#i-spark"/></svg></span>
+    <h2 class="modal__title" id="demo-dialog-title">有料プランは構想段階です</h2>
+    <p id="demo-dialog-desc">このプロトタイプには、申し込み・お支払いの機能はありません。</p>
+    <p class="modal__selected">選択したプラン：<strong data-dialog-plan>スタンダードプラン</strong></p>
+    <p class="modal__sub">作成画面では、サンプル文章で仕上がりのイメージをご覧いただけます。</p>
+    <div class="modal__actions">
+      <a class="btn btn--primary" href="#studio" data-dialog-studio>作成画面を見る</a>
+      <button type="button" class="btn btn--ghost" data-dialog-close>閉じる</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/studio.js" defer></script>
+</body>
+</html>
