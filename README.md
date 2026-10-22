@@ -4,8 +4,8 @@
 
 | 作品 | 内容 | 公開ページ |
 | --- | --- | --- |
-| RENOVA | 架空の建築・リノベーションブランドの公式サイト（7ページ） | https://nookdesign.github.io/nook-design-portfolio/renova/ |
 | Lueur | 架空のヘアサロン＆ヘッドスパの1ページLP | https://nookdesign.github.io/nook-design-portfolio/lueur/ |
+| RENOVA | 架空の建築・リノベーションブランドの公式サイト（7ページ） | https://nookdesign.github.io/nook-design-portfolio/renova/ |
 | NOVA AI | 架空のAI文章作成SaaSのプロトタイプ（作品の説明ページと、AI に接続しないデモ） | https://nookdesign.github.io/nook-design-portfolio/nova-ai/ |
 | NOOK COFFEE | 架空の自家焙煎カフェの公式サイト（5ページ） | https://nookdesign.github.io/nook-design-portfolio/nook-coffee/ |
 | 酒肴 灯ノ間 | 架空の和食居酒屋の1ページWebサイト | https://nookdesign.github.io/nook-design-portfolio/izakaya-hinoma/ |
